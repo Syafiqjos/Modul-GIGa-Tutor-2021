@@ -10,6 +10,7 @@ bikin game,
 coba build.
 
 ide : cuphead
+assets : harambert/unlucid_git
 berjalan pake keyboard wasd, nembak pake arrow up down left right
 
 - Overview
@@ -29,3 +30,13 @@ berjalan pake keyboard wasd, nembak pake arrow up down left right
 - Benerin scene
 - Build
 - Selesai
+
+Step :
+- Import assets
+- Setting up assets
+- Split sprite jika ada multiple untuk tileset
+- Asset sprite Normalin jadi pixels per unit 32
+- Bikin prefabs
+- Bikin animations
+- Bikin desain level
+- Bikin Code Program
