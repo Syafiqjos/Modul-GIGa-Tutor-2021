@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90b613219eb911742b5493c577be619d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb2da4f053797724f8328ca3c2188be6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4739586054211886288}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,3 +191,4 @@ MonoBehaviour:
   moveSpeed: 2.5
   jumpForce: 5
   dashDistance: 2
+  minGroundDistance: 1.5

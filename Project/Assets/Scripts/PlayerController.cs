@@ -13,13 +13,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float health = 100;
     [SerializeField] private float attack = 5;
 
+    private bool isGrounded = true;
+    private bool isShooting = true;
+    private int velocityX = 0;
+    private int velocityY = 0;
+
     [Header("Configuration")]
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float jumpForce = 5.0f;
     [SerializeField] private float dashDistance = 2.0f;
 
+    [SerializeField] private float minGroundDistance = 1.5f;
+
     private Rigidbody2D rb2;
-    private bool isGrounded = true;
+    private Animator animator;
 
     void Awake()
     {
@@ -29,6 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,6 +45,8 @@ public class PlayerController : MonoBehaviour
         JumpController();
         DashController();
         ShootController();
+
+        AnimationController();
     }
 
     void MovementController()
@@ -60,6 +70,16 @@ public class PlayerController : MonoBehaviour
 
     void JumpController()
     {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, (1 << 3));
+        
+        if (ray && ray.distance < minGroundDistance)
+        {
+            isGrounded = true;
+        } else
+        {
+            isGrounded = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
@@ -93,6 +113,8 @@ public class PlayerController : MonoBehaviour
 
     void ShootController()
     {
+        isShooting = false;
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Shoot();
@@ -101,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-
+        isShooting = true;
     }
 
     public void DamagedBy(float damage)
@@ -117,6 +139,17 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         GameManager.Instance.GameOver();
+    }
+
+    void AnimationController()
+    {
+        velocityX = (int)Mathf.Clamp(rb2.velocity.x, -1, 1);
+        velocityY = (int)Mathf.Clamp(rb2.velocity.y, -1, 1);
+
+        animator.SetBool("isShooting", isShooting);
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetInteger("velocityX", velocityX);
+        animator.SetInteger("velocityY", velocityY);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
