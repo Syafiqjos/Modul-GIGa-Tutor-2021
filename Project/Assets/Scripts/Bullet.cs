@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 2;
-    public float damage = 2;
-    public Vector2 direction;
+    [SerializeField] private float speed = 2;
+    [SerializeField] private float damage = 2;
+    [SerializeField] private float dieTime = 5;
 
-    public float dieTime = 5;
+    private Vector2 direction;
 
     private Rigidbody2D rb2;
 
@@ -44,5 +44,10 @@ public class Bullet : MonoBehaviour
             other.GetComponent<EnemyController>().DamagedBy(damage);
             Destroy(gameObject);
         }
+    }
+
+    public float GetDamage()
+    {
+        return damage;
     }
 }

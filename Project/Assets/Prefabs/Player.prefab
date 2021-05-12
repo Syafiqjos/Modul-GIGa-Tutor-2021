@@ -186,5 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 4739586053566366086}
+  health: 100
+  attack: 5
   moveSpeed: 2.5
   jumpForce: 5
+  dashDistance: 2
