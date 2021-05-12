@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
+
     [Header("Properties")]
     [SerializeField] private SpriteRenderer graphic;
 
+    [Header("Status")]
+    [SerializeField] private float health;
+    [SerializeField] private float attack;
+
     [Header("Configuration")]
-    [SerializeField] private float moveSpeed = 1.0f;
-    [SerializeField] private float jumpForce = 2.0f;
+    [SerializeField] private float moveSpeed = 2.5f;
+    [SerializeField] private float jumpForce = 5.0f;
+    [SerializeField] private float dashDistance = 2.0f;
 
     private Rigidbody2D rb2;
     private bool isGrounded = true;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -23,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         MovementController();
         JumpController();
+        DashController();
         ShootController();
     }
 
@@ -61,6 +74,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void DashController()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Dash();
+        }
+    }
+
+    void Dash()
+    {
+        int direction = (graphic.flipX == false ? 1 : -1);
+
+        Vector2 newPos = rb2.position + new Vector2(dashDistance * direction, 0);
+
+        rb2.MovePosition(newPos);
+    }
+
     void ShootController()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -72,5 +102,15 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
 
+    }
+
+    public void DamagedBy(int delta)
+    {
+        health -= delta;
+        if (health <= 0)
+        {
+            health = 0;
+            GameManager.Instance.GameOver();
+        }
     }
 }
