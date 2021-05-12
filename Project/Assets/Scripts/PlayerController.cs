@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float jumpForce = 5.0f;
     [SerializeField] private float dashDistance = 2.0f;
+    [SerializeField] private float shootingTimeMax = 1.0f;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float bulletSpeed = 10;
+
+    [SerializeField] private Vector2 gunOffset;
+
+    private float shootingTime = 0;
 
     [SerializeField] private float minGroundDistance = 1.5f;
 
@@ -37,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         rb2 = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        shootingTime = shootingTimeMax;
     }
 
     void Update()
@@ -113,17 +122,36 @@ public class PlayerController : MonoBehaviour
 
     void ShootController()
     {
-        isShooting = false;
+        isShooting = Input.GetKey(KeyCode.Z);
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (isShooting)
         {
+            shootingTime -= Time.deltaTime;
+        } else
+        {
+            shootingTime = shootingTimeMax;
+        }
+
+        if (isShooting && shootingTime < 0)
+        {
+            shootingTime = shootingTimeMax;
             Shoot();
         }
     }
 
     void Shoot()
     {
-        isShooting = true;
+        int direction = (graphic.flipX == false ? 1 : -1);
+
+        Vector2 gunPos = new Vector2(gunOffset.x * direction + transform.position.x, gunOffset.y + transform.position.y);
+
+        GameObject bulletObj = Instantiate(bulletPrefab, gunPos, Quaternion.identity);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+
+        if (bullet)
+        {
+            bullet.Launch(new Vector2(direction, 0), bulletSpeed);
+        }
     }
 
     public void DamagedBy(float damage)

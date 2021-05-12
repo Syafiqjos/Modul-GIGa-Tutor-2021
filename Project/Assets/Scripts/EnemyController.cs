@@ -42,4 +42,13 @@ public class EnemyController : MonoBehaviour
     {
         return attack;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Bullet")
+        {
+            float damage = collision.collider.GetComponent<Bullet>().GetDamage();
+            DamagedBy(damage);
+        }
+    }
 }

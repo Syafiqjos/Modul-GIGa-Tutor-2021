@@ -28,22 +28,10 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Launch(Vector2 direction, int speed)
+    public void Launch(Vector2 direction, float speed)
     {
         this.direction = direction;
         this.speed = speed;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            other.GetComponent<PlayerController>().DamagedBy(damage);
-            Destroy(gameObject);
-        } else if (other.tag == "Enemy") {
-            other.GetComponent<EnemyController>().DamagedBy(damage);
-            Destroy(gameObject);
-        }
     }
 
     public float GetDamage()
