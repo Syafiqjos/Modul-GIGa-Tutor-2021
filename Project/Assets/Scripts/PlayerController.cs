@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer graphic;
 
     [Header("Status")]
-    [SerializeField] private float health;
-    [SerializeField] private float attack;
+    [SerializeField] private float health = 100;
+    [SerializeField] private float attack = 5;
 
     [Header("Configuration")]
     [SerializeField] private float moveSpeed = 2.5f;
@@ -104,13 +104,31 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void DamagedBy(int delta)
+    public void DamagedBy(float damage)
     {
-        health -= delta;
+        health -= damage;
         if (health <= 0)
         {
             health = 0;
-            GameManager.Instance.GameOver();
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        GameManager.Instance.GameOver();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            float damage = collision.collider.GetComponent<EnemyController>().GetAttackDamage();
+            DamagedBy(damage);
+        } else if (collision.collider.tag == "Bullet")
+        {
+            float damage = collision.collider.GetComponent<Bullet>().GetDamage();
+            DamagedBy(damage);
         }
     }
 }
