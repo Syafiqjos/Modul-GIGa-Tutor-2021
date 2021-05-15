@@ -47,9 +47,13 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
-            float damage = collision.GetComponent<Bullet>().GetDamage();
-            DamagedBy(damage);
-            Destroy(collision.gameObject);
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet.targetTag == "Enemy")
+            {
+                float damage = bullet.GetDamage();
+                DamagedBy(damage);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

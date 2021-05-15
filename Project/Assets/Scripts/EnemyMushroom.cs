@@ -57,6 +57,6 @@ public class EnemyMushroom : EnemyController
 
         GameObject bulletObj = Instantiate(bulletPrefab, shootPos, Quaternion.identity);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
-        bullet.Launch(new Vector2(direction, 0), bulletSpeed, attack);
+        bullet.Launch(new Vector2(direction, 0), "Player", bulletSpeed, attack);
     }
 }

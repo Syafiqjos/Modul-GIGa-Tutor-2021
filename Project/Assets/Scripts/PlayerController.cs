@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
         if (bullet)
         {
-            bullet.Launch(new Vector2(direction, 0), bulletSpeed, attack);
+            bullet.Launch(new Vector2(direction, 0),"Enemy", bulletSpeed, attack);
         }
     }
 
@@ -174,9 +174,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
-            float damage = collision.GetComponent<Bullet>().GetDamage();
-            DamagedBy(damage);
-            Destroy(collision.gameObject);
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet.targetTag == "Player")
+            {
+                float damage = bullet.GetDamage();
+                DamagedBy(damage);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

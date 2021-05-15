@@ -62,3 +62,7 @@ Step :
 
 - Code Scene Management
 - Play Test : Kalo kalah restart, kalo menang lanjut level selanjutnya (untuk sementara gaperlu ada main menu)
+
+- Build Game
+
+- Finish

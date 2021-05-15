@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float damage = 2;
     [SerializeField] private float dieTime = 5;
 
+    public string targetTag = "Enemy";
+
     private Vector2 direction;
 
     private Rigidbody2D rb2;
@@ -28,11 +30,12 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Launch(Vector2 direction, float speed, float damage)
+    public void Launch(Vector2 direction, string targetTag, float speed, float damage)
     {
         this.direction = direction;
         this.speed = speed;
         this.damage = damage;
+        this.targetTag = targetTag;
     }
 
     public float GetDamage()
