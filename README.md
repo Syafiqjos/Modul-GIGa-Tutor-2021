@@ -1,5 +1,5 @@
 # Maydua2
-Concept context smh
+Concept context 22
 
 benakno konsep game apa dan gimana,
 benakno timeline / rundown modul,
@@ -125,3 +125,4 @@ berjalan pake keyboard wasd, nembak pake arrow up down left right
 - Ada Alokasi waktu untuk kesalahan teknis untuk cadangan waktu kalo ada hal tidak diinginkan terjadi
 
 ## Proses bikin modul xixixi
+Typing..
