@@ -37,6 +37,24 @@ Step :
 - Split sprite jika ada multiple untuk tileset
 - Asset sprite Normalin jadi pixels per unit 32
 - Bikin prefabs
-- Bikin animations
-- Bikin desain level
 - Bikin Code Program
+- Play Test : jalan jalan
+
+- Bikin animations (jalan, lompat) (optional nembak)
+- Code Animasi
+- Play Test : test animasi
+
+- Bikin desain level simple
+- Code finish, kalo ngelewati ini menang
+- Play Test : finish game
+
+- Code Enemy tambahi enemy
+- Code player bisa nembak enemy
+- Jadikan prefab sama taruh di scene enemy - nya
+- Play Test : Jalan kill enemy sampe finish
+
+- Code UI untuk healthbar dan score kill musuh
+- Play Test : check UI dan score
+
+- Code Scene Management
+- Play Test : Kalo kalah restart, kalo menang lanjut level selanjutnya (untuk sementara gaperlu ada main menu)
