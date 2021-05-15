@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public float playerHealthBarFullX = 78;
 
     public GameObject gameOverUI;
+    public GameObject levelCompleteUI;
 
     public PlayerController player;
 
@@ -28,7 +29,11 @@ public class UIManager : MonoBehaviour
             playerHealthBar.rectTransform.sizeDelta = size;
         }
 
-        if (gameOverUI)
+        if (levelCompleteUI)
+        {
+            levelCompleteUI.SetActive(GameManager.isLevelComplete);
+        }
+        else if (gameOverUI)
         {
             gameOverUI.SetActive(GameManager.isGameOver);
         }

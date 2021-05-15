@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
 
         if (currentEnemyProgress >= targetEnemyProgress)
         {
-            GameManager.NextLevel();
+            GameManager.CompleteLevel();
         }
     }
 }
