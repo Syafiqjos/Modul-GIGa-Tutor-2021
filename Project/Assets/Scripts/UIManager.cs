@@ -29,11 +29,10 @@ public class UIManager : MonoBehaviour
             playerHealthBar.rectTransform.sizeDelta = size;
         }
 
-        if (levelCompleteUI)
+        if (levelCompleteUI && GameManager.isLevelComplete)
         {
             levelCompleteUI.SetActive(GameManager.isLevelComplete);
-        }
-        else if (gameOverUI)
+        } else if (gameOverUI && GameManager.isGameOver)
         {
             gameOverUI.SetActive(GameManager.isGameOver);
         }

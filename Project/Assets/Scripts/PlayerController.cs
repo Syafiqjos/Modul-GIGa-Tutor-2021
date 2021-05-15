@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float health = 100;
     public float attack = 5;
 
+    public bool canBeMoved = true;
+
     public float healthMax { private set; get; }
 
     private bool isGrounded = true;
@@ -52,11 +54,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        MovementController();
-        JumpController();
-        ShootController();
+        if (canBeMoved)
+        {
+            MovementController();
+            JumpController();
+            ShootController();
 
-        AnimationController();
+            AnimationController();
+        }
 
         FallDie();
     }
@@ -160,6 +165,8 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
+        graphic.enabled = false;
+        canBeMoved = false;
         GameManager.GameOver();
     }
 
