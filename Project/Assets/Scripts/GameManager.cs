@@ -5,29 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-
-    void Awake()
+    public static void GameOver()
     {
-        Instance = this;
+        RetryGame();
     }
 
-    void Start()
+    public static void NextLevel()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void GameOver()
-    {
-
-    }
-
-    public void RetryGame()
+    public static void RetryGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

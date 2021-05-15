@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Movement();
+
+        FallDie();
     }
 
     protected virtual void Movement()
@@ -33,9 +35,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    void FallDie()
+    {
+        if (transform.position.y < -20)
+        {
+            Die();
+        }
+    }
+
     void Die()
     {
         Destroy(gameObject);
+        ScoreManager.DefeatEnemy();
     }
 
     public float GetAttackDamage()

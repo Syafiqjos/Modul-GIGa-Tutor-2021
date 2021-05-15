@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
         ShootController();
 
         AnimationController();
+
+        FallDie();
     }
 
     void MovementController()
@@ -145,9 +147,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FallDie()
+    {
+        if (transform.position.y < -20)
+        {
+            Die();
+        }
+    }
+
     void Die()
     {
-        GameManager.Instance.GameOver();
+        GameManager.GameOver();
     }
 
     void AnimationController()
