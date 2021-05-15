@@ -167,10 +167,16 @@ public class PlayerController : MonoBehaviour
         {
             float damage = collision.collider.GetComponent<EnemyController>().GetAttackDamage();
             DamagedBy(damage);
-        } else if (collision.collider.tag == "Bullet")
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
         {
-            float damage = collision.collider.GetComponent<Bullet>().GetDamage();
+            float damage = collision.GetComponent<Bullet>().GetDamage();
             DamagedBy(damage);
+            Destroy(collision.gameObject);
         }
     }
 }

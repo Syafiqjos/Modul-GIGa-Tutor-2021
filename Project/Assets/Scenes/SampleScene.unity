@@ -1034,6 +1034,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2001720972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4739586054181939026, guid: 969813b64952efa4695f7bc9acd7461b, type: 3}
+  m_PrefabInstance: {fileID: 4739586054211886286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017682625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1455385350, guid: 1019755ea7229d74988108065d13859b, type: 3}
+      propertyPath: attackTarget
+      value: 
+      objectReference: {fileID: 2001720972}
     - target: {fileID: 676850933424199842, guid: 1019755ea7229d74988108065d13859b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1240,6 +1249,10 @@ PrefabInstance:
     - target: {fileID: 6043301777231924549, guid: 1069099c471bdbb4e8503c786f6d7eb9, type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043301777231924549, guid: 1069099c471bdbb4e8503c786f6d7eb9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6043301777231924551, guid: 1069099c471bdbb4e8503c786f6d7eb9, type: 3}
       propertyPath: m_RootOrder

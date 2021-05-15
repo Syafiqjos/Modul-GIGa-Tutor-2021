@@ -8,10 +8,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float health = 20;
     [SerializeField] private float attack = 5;
 
-    [SerializeField] private Transform attackTarget;
+    public Transform attackTarget;
 
     [Header("Configuration")]
-    [SerializeField] private float moveSpeed = 2.5f;    
+    [SerializeField] private float moveSpeed = 2.5f;
 
     void Update()
     {
@@ -41,15 +41,6 @@ public class EnemyController : MonoBehaviour
     public float GetAttackDamage()
     {
         return attack;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Bullet")
-        {
-            float damage = collision.collider.GetComponent<Bullet>().GetDamage();
-            DamagedBy(damage);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
