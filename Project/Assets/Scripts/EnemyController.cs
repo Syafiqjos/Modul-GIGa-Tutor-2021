@@ -51,4 +51,14 @@ public class EnemyController : MonoBehaviour
             DamagedBy(damage);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
+        {
+            float damage = collision.GetComponent<Bullet>().GetDamage();
+            DamagedBy(damage);
+            Destroy(collision.gameObject);
+        }
+    }
 }

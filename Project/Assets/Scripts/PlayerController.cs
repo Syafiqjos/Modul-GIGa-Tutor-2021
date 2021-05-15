@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     [Header("Configuration")]
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float jumpForce = 5.0f;
-    [SerializeField] private float dashDistance = 2.0f;
     [SerializeField] private float shootingTimeMax = 1.0f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpeed = 10;
@@ -52,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         MovementController();
         JumpController();
-        DashController();
         ShootController();
 
         AnimationController();
@@ -101,23 +99,6 @@ public class PlayerController : MonoBehaviour
         {
             rb2.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-    }
-
-    void DashController()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Dash();
-        }
-    }
-
-    void Dash()
-    {
-        int direction = (graphic.flipX == false ? 1 : -1);
-
-        Vector2 newPos = rb2.position + new Vector2(dashDistance * direction, 0);
-
-        rb2.MovePosition(newPos);
     }
 
     void ShootController()

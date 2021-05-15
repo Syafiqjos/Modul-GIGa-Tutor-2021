@@ -53,6 +53,7 @@ Step :
 - Jadikan prefab sama taruh di scene enemy - nya
 - Play Test : Jalan kill enemy sampe finish
 
+- Code Score Manager
 - Code UI untuk healthbar dan score kill musuh
 - Play Test : check UI dan score
 
