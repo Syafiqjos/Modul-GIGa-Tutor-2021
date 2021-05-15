@@ -48,6 +48,9 @@ Step :
 - Code finish, kalo ngelewati ini menang
 - Play Test : finish game
 
+- Code camera follow player
+- Play Test : Camera bisa follow player
+
 - Code Enemy tambahi enemy
 - Code player bisa nembak enemy
 - Jadikan prefab sama taruh di scene enemy - nya

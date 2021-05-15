@@ -30,15 +30,15 @@ public class EnemyMushroom : EnemyController
                 {
                     graphic.flipX = false;
                 }
-            }
-            
-            if (attackTime < 0)
-            {
-                Shoot();
-                attackTime = attackTimeMax;
-            }
 
-            attackTime -= Time.deltaTime;
+                if (attackTime < 0)
+                {
+                    Shoot();
+                    attackTime = attackTimeMax;
+                }
+
+                attackTime -= Time.deltaTime;
+            }
         }
     }
 
@@ -57,6 +57,6 @@ public class EnemyMushroom : EnemyController
 
         GameObject bulletObj = Instantiate(bulletPrefab, shootPos, Quaternion.identity);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
-        bullet.Launch(new Vector2(direction, 0), bulletSpeed);
+        bullet.Launch(new Vector2(direction, 0), bulletSpeed, attack);
     }
 }

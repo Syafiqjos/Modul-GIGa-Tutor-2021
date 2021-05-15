@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -231,6 +232,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4df8ec1c10d8a14ab4552cffb5d55d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFollowing: 1
+  target: {fileID: 2001720972}
+  targetOffset: {x: 0, y: 0, z: 0}
+  followRatio: 0.05
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1132,6 +1149,10 @@ PrefabInstance:
       propertyPath: attackTarget
       value: 
       objectReference: {fileID: 2001720972}
+    - target: {fileID: 1455385350, guid: 1019755ea7229d74988108065d13859b, type: 3}
+      propertyPath: attackMinDistance
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 676850933424199842, guid: 1019755ea7229d74988108065d13859b, type: 3}
       propertyPath: m_RootOrder
       value: 3

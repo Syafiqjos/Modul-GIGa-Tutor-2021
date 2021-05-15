@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [Header("Status")]
-    [SerializeField] private float health = 20;
-    [SerializeField] private float attack = 5;
+    public float health = 20;
+    public float attack = 5;
 
     public Transform attackTarget;
 

@@ -202,6 +202,6 @@ MonoBehaviour:
   graphic: {fileID: 2042824870}
   bulletPrefab: {fileID: 8422250167837164933, guid: 9734ad0e085422647adf07474b149486, type: 3}
   bulletSpeed: 2
-  attackMinDistance: 10
+  attackMinDistance: 7
   attackTimeMax: 2
   shootOffset: {x: 1.2, y: -0.6, z: 0}

@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer graphic;
 
     [Header("Status")]
-    [SerializeField] private float health = 100;
-    [SerializeField] private float attack = 5;
+    public float health = 100;
+    public float attack = 5;
 
     private bool isGrounded = true;
     private bool isShooting = true;
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
         if (bullet)
         {
-            bullet.Launch(new Vector2(direction, 0), bulletSpeed);
+            bullet.Launch(new Vector2(direction, 0), bulletSpeed, attack);
         }
     }
 

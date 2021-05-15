@@ -28,10 +28,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Launch(Vector2 direction, float speed)
+    public void Launch(Vector2 direction, float speed, float damage)
     {
         this.direction = direction;
         this.speed = speed;
+        this.damage = damage;
     }
 
     public float GetDamage()
