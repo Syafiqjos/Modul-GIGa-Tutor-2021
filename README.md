@@ -57,11 +57,18 @@ Step :
 - Play Test : Jalan kill enemy sampe finish
 
 - Code Score Manager
-- Code UI untuk healthbar dan score kill musuh
+- Code UI untuk healthbar
+- Code UI score progress kill musuh
 - Play Test : check UI dan score
 
 - Code Scene Management
+- Bikin Game Over
+- Bikin Level Complete
 - Play Test : Kalo kalah restart, kalo menang lanjut level selanjutnya (untuk sementara gaperlu ada main menu)
+
+- Duplicate level 1 atau bikin level 2 baru
+- Bikin Scene Tamat
+- Play Test : next next gameplay
 
 - Build Game
 
