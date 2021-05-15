@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        GameObject[] enemyControllers = GameObject.FindGameObjectsWithTag("Enemy");
+        EnemyController[] enemyControllers = FindObjectsOfType<EnemyController>();
 
         targetEnemyProgress = enemyControllers.Length;
         currentEnemyProgress = 0;

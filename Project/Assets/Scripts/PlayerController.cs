@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float health = 100;
     public float attack = 5;
 
+    public float healthMax { private set; get; }
+
     private bool isGrounded = true;
     private bool isShooting = true;
     private int velocityX = 0;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         shootingTime = shootingTimeMax;
+        healthMax = health;
     }
 
     void Update()
