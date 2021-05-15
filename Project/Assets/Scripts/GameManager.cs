@@ -5,9 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool isGameOver { get; private set; }
+
+    private void Awake()
+    {
+        isGameOver = false;
+    }
+
+    private void Update()
+    {
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                RetryGame();
+            }
+        }
+    }
+
     public static void GameOver()
     {
-        RetryGame();
+        isGameOver = true;
     }
 
     public static void NextLevel()

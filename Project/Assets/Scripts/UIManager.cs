@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Image playerHealthBar;
     public float playerHealthBarFullX = 78;
 
+    public GameObject gameOverUI;
+
     public PlayerController player;
 
     void Update()
@@ -24,6 +26,11 @@ public class UIManager : MonoBehaviour
             size.x = player.health / player.healthMax * playerHealthBarFullX;
 
             playerHealthBar.rectTransform.sizeDelta = size;
+        }
+
+        if (gameOverUI)
+        {
+            gameOverUI.SetActive(GameManager.isGameOver);
         }
     }
 }
