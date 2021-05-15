@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFollowing: 1
   target: {fileID: 2001720972}
-  targetOffset: {x: 0, y: 0, z: 0}
+  targetOffset: {x: 0, y: 2.5, z: 0}
   followRatio: 0.05
 --- !u!20 &519420031
 Camera:
@@ -1149,10 +1149,6 @@ PrefabInstance:
       propertyPath: attackTarget
       value: 
       objectReference: {fileID: 2001720972}
-    - target: {fileID: 1455385350, guid: 1019755ea7229d74988108065d13859b, type: 3}
-      propertyPath: attackMinDistance
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 676850933424199842, guid: 1019755ea7229d74988108065d13859b, type: 3}
       propertyPath: m_RootOrder
       value: 3

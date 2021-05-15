@@ -17,10 +17,10 @@ public class CameraFollow : MonoBehaviour
         {
             if (isFollowing)
             {
-                targetPos = target.position;
+                targetPos = target.position + targetOffset;
             }
 
-            Vector3 newPos = Vector3.Lerp(transform.position, targetPos, followRatio) + targetOffset;
+            Vector3 newPos = Vector3.Lerp(transform.position, targetPos, followRatio);
             newPos.z = transform.position.z;
 
             transform.position = newPos;
