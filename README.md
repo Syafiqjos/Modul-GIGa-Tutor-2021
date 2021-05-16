@@ -71,26 +71,26 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
-- Menjelaskan GameObject (lagi)
-- Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty
+- Menjelaskan GameObject (lagi).
+- Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty.
 
 ![IntroductionGameObject-PlayerEmpty](/Images/IntroductionGameObject-PlayerEmpty.png)
 
-- Ganti nama GameObject ini menjadi Player
+- Ganti nama GameObject ini menjadi Player.
 
 ![IntroductionGameObject-PlayerRename](/Images/IntroductionGameObject-PlayerRename.png)
 
-- Pada Hierarchy, klik kanan pada Player dan pilih Create Empty dan ubah namanya menjadi Graphic
+- Pada Hierarchy, klik kanan pada Player dan pilih Create Empty dan ubah namanya menjadi Graphic.
 
 ![IntroductionGameObject-PlayerCreateChild](/Images/IntroductionGameObject-PlayerCreateChild.png)
 
-- Pada child Player Graphic ini, tambahkan component Sprite Renderer
+- Pada child Player Graphic ini, tambahkan component Sprite Renderer.
 
 ![IntroductionGameObject-PlayerAddSpriteRenderer](/Images/IntroductionGameObject-PlayerAddSpriteRenderer.png)
 
-- Menjelaskan Sprite Renderer
+- Menjelaskan Sprite Renderer.
 
-- Navigasi pada Assets/Sprites/Player dan pilih salah satu Sprite, dalam modul ini kami menggunakan player_idle_0.png sebagai contoh.
+- Navigasi pada `Assets/Sprites/Player` dan pilih salah satu Sprite, dalam modul ini kami menggunakan `player_idle_0.png` sebagai contoh.
 
 ![IntroductionGameObject-PlayerSpriteAssets](/Images/IntroductionGameObject-PlayerSpriteAssets.png)
 
@@ -98,7 +98,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-PlayerSpritePixels32](/Images/IntroductionGameObject-PlayerSpritePixels32.png)
 
-- Drag Sprite tersebut menuju field Sprite pada component SpriteRenderer yang ada pada GameObject Graphic
+- Drag Sprite tersebut menuju field Sprite pada component SpriteRenderer yang ada pada GameObject Graphic.
 
 ![IntroductionGameObject-PlayerSpriteAssign](/Images/IntroductionGameObject-PlayerSpriteAssign.png)
 
@@ -106,7 +106,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-PlayerPreview](/Images/IntroductionGameObject-PlayerPreview.png)
 
-- Menjelaskan Transform (lagi)
+- Menjelaskan Transform (lagi).
 
 ### Mencoba Sprite Slicing untuk Forest Tile
 - Menjelaskan Sprite Slicing
