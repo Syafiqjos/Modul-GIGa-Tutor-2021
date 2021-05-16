@@ -60,11 +60,11 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## E. Import Assets
 
-- Extract file Assets yang telah didownload sebelumnya pada lokasi Project yang barusan dibuat.
+### Extract file Assets yang telah didownload sebelumnya pada lokasi Project yang barusan dibuat.
 
 ![ImportAssets-Extract](/Images/ImportAssets-Extract.png)
 
-- Sehingga struktur project yang baru kurang lebih seperti berikut ini.
+### Sehingga struktur project yang baru kurang lebih seperti berikut ini.
 
 ![ImportAssets-Structure](/Images/ImportAssets-Structure.png)
 
