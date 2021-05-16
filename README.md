@@ -29,16 +29,31 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## D. Pengenalan Layout Unity
 ### Scene View
+
+![LayoutUnity-SceneView](/Images/LayoutUnity-SceneView.png)
+
 - Menjelaskan Scene View
 - Menjelaskan Project
 - Menjelaskan Scene
 ### Game View
+
+![LayoutUnity-GameView](/Images/LayoutUnity-GameView.png)
+
 - Menjelaskan Game View
 ### Project Window
+
+![LayoutUnity-ProjectWindow](/Images/LayoutUnity-ProjectWindow.png)
+
 - Menjelaskan Project Window
 ### Hierarchy
+
+![LayoutUnity-Hierarchy](/Images/LayoutUnity-Hierarchy.png)
+
 - Menjelaskan Hierarchy
 ### Inspector
+
+![LayoutUnity-Inspector](/Images/LayoutUnity-Inspector.png)
+
 - Menjelaskan Inspector
 - Menjelaskan GameObject
 - Menjelaskan Transform
