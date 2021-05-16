@@ -56,7 +56,8 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Menjelaskan Inspector
 - Menjelaskan GameObject
-- Menjelaskan Transform
+- Menjelaskan Component
+- Menjelaskan bahwa Transform termasuk Component
 
 ## E. Import Assets
 
@@ -70,8 +71,42 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
+- Menjelaskan GameObject (lagi)
+- Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty
+
+![IntroductionGameObject-PlayerEmpty](/Images/IntroductionGameObject-PlayerEmpty.png)
+
+- Ganti nama GameObject ini menjadi Player
+
+![IntroductionGameObject-PlayerRename](/Images/IntroductionGameObject-PlayerRename.png)
+
+- Pada Hierarchy, klik kanan pada Player dan pilih Create Empty dan ubah namanya menjadi Graphic
+
+![IntroductionGameObject-PlayerCreateChild](/Images/IntroductionGameObject-PlayerCreateChild.png)
+
+- Pada child Player Graphic ini, tambahkan component Sprite Renderer
+
+![IntroductionGameObject-PlayerAddSpriteRenderer](/Images/IntroductionGameObject-PlayerAddSpriteRenderer.png)
+
 - Menjelaskan Sprite Renderer
-- bikin empty player, bikin graphic, jadikan gambar ke 32 pixel
+
+- Navigasi pada Assets/Sprites/Player dan pilih salah satu Sprite, dalam modul ini kami menggunakan player_idle_0.png sebagai contoh.
+
+![IntroductionGameObject-PlayerSpriteAssets](/Images/IntroductionGameObject-PlayerSpriteAssets.png)
+
+- Klik pada sprite tersebut lalu pada Inspector ubah Pixels Per Unit menjadi 32 lalu Apply.
+
+![IntroductionGameObject-PlayerSpritePixels32](/Images/IntroductionGameObject-PlayerSpritePixels32.png)
+
+- Drag Sprite tersebut menuju field Sprite pada component SpriteRenderer yang ada pada GameObject Graphic
+
+![IntroductionGameObject-PlayerSpriteAssign](/Images/IntroductionGameObject-PlayerSpriteAssign.png)
+
+- Jika berhasil, kita dapat melihat Player pada Scene View. Pilih Player lalu coba pindahkan posisinya dengan menggunakan axis transform.
+
+![IntroductionGameObject-PlayerPreview](/Images/IntroductionGameObject-PlayerPreview.png)
+
+- Menjelaskan Transform (lagi)
 
 ### Mencoba Sprite Slicing untuk Forest Tile
 - Menjelaskan Sprite Slicing
