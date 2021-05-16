@@ -2,8 +2,6 @@
 
 ![Gameplay-Overview](/Images/Gameplay-Overview.gif)
 
-![Gameplay-Overview](/Images/Gameplay-Overview.mp4)
-
 ## A. Pendahuluan
 Unity adalah gem enjin.
 
