@@ -1,14 +1,24 @@
 # GiGa Tutor 2021
 
-## Pendahuluan
+## A. Pendahuluan
 Unity adalah gem enjin.
 
-## Download Assets
-Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
+## B. Download Assets
+Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
 
-## Setting Up Project
+## C. Setting Up Project
+1. Buka Unity Hub yang telah di download.
+[SettingUp-UnityHub](/Images/SettingUp-UnityHub.png)
 
-## Pengenalan Layout Unity
+2. Pilih New pada pojok kanan atas untuk membuat Project baru.
+
+3. Pilih Template 2D untuk membuat game 2D dan isi **Project Name** untuk Nama Project Game yang ingin dibuat dan **Location** untuk lokasi project yang akan ditempatkan.
+[SettingUp-UnityHubNewProject](/Images/SettingUp-UnityHubNewProject.png)
+
+4. Tekan **Create** dan menunggu loading dari Unity untuk membuat Project Game 2D baru.
+[SettingUp-UnityInterface](/Images/SettingUp-UnityInterface.png)
+
+## D. Pengenalan Layout Unity
 ### Scene View
 - Menjelaskan Scene View
 - Menjelaskan Project
@@ -24,11 +34,11 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Menjelaskan GameObject
 - Menjelaskan Transform
 
-## Import Assets
+## E. Import Assets
 - extract zip terus taruh di project folder assets,
 - check assets yang telah diimport
 
-## Pengenalan GameObject pada Unity
+## F. Pengenalan GameObject pada Unity
 ### Membuat Player
 - Menjelaskan Sprite Renderer
 - bikin empty player, bikin graphic, jadikan gambar ke 32 pixel
@@ -51,7 +61,7 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 ### Membuat Prefab untuk Player
 - Menjelaskan prefabs
 
-## Membuat Entitas pada Game
+## G. Membuat Entitas pada Game
 ### Membuat Code Player
 - Menjelaskan bahasa C#
 - Menjelaskan Awake, Start, Update, Input
@@ -91,7 +101,7 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Membuat code camera follow
 - Menjelaskan Lerp
 
-## Membuat GameMaster yang mengontrol sebagian besar Game
+## H. Membuat GameMaster yang mengontrol sebagian besar Game
 ### Membuat GameManager
 - Menjelaskan Singleton
 - Membuat Code GameManager
@@ -100,7 +110,7 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Menjelaskan Singleton
 - Membuat Code ScoreManager
 
-## Membuat UI untuk memperindah Game
+## I. Membuat UI untuk memperindah Game
 ### Membuat UI
 - Menjelaskan UI
 - Menjelaskan Canvas
@@ -122,7 +132,7 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Menggabungkan dengan GameManager dan ScoreManager
 - Menjelaskan mengganti text dari code
 
-## Membuat Scene Baru Agar Game Lebih Menyenangkan
+## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
 - Menjelaskan SceneManagement
 - Menjelaskan ActiveScene
@@ -134,17 +144,17 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Memodifikasi Scene
 - Menambah scene pada build
 
-## Build Game agar game dapat Dimainkan!
+## K. Build Game agar game dapat Dimainkan!
 ### Pengenalan Platform
 - Menjelaskan platform apa aja yang bisa digunakan
 ### Pengenalan Player Settings
 - Menjelaskan Cara export
 - Melakukan Build
 
-## Selesai !!
+## L. Selesai !!
 ### Game dapat dimainkan
 
-## Extra!! Menambahkan Animasi
+## M. Extra!! Menambahkan Animasi
 ### Pengenalan Animasi
 - Menjelaskan Animator
 - Menjelaskan Animation
@@ -155,8 +165,8 @@ Download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUm
 - Mencoba test
 - Selesai
 
-## Penutup
+## N. Penutup
 Terima Kasih telah ditutup.
 
-## Terima Kasih
+## O. Terima Kasih
 sip
