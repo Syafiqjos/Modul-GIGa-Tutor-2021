@@ -1,5 +1,7 @@
 # GiGa Tutor 2021
 
+![Gameplay-Overview](/Images/Gameplay-Overview.gif)
+
 ## A. Pendahuluan
 Unity adalah gem enjin.
 
