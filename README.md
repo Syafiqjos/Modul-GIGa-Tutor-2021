@@ -150,6 +150,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ### Membuat Enemy Mushroom
 - Membuat Code Enemy Mushroom yang nge inherit Enemy
+- Membuat Prefab untuk Enemy Mushroom
 
 ### Membuat Fitur Player Loncat
 - Menjelaskan Raycast
