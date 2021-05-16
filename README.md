@@ -59,8 +59,14 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 - Menjelaskan Transform
 
 ## E. Import Assets
-- extract zip terus taruh di project folder assets,
-- check assets yang telah diimport
+
+- Extract file Assets yang telah didownload sebelumnya pada lokasi Project yang barusan dibuat.
+
+![ImportAssets-Extract](/Images/ImportAssets-Extract.png)
+
+- Sehingga struktur project yang baru kurang lebih seperti berikut ini.
+
+![ImportAssets-Structure](/Images/ImportAssets-Structure.png)
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
