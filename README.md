@@ -1,6 +1,7 @@
 # GiGa Tutor 2021
+## Shooting-Platformer 2D Unity Tutorial
 
-![Gameplay-Overview](/Images/Gameplay-Overview.gif)
+[Gameplay-Overview](/Images/Gameplay-Overview.gif)
 
 ## A. Pendahuluan
 Unity adalah gem enjin.
