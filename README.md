@@ -8,15 +8,15 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## C. Setting Up Project
 1. Buka Unity Hub yang telah di download.
-[SettingUp-UnityHub](/Images/SettingUp-UnityHub.png)
+![SettingUp-UnityHub](/Images/SettingUp-UnityHub.png)
 
 2. Pilih New pada pojok kanan atas untuk membuat Project baru.
 
 3. Pilih Template 2D untuk membuat game 2D dan isi **Project Name** untuk Nama Project Game yang ingin dibuat dan **Location** untuk lokasi project yang akan ditempatkan.
-[SettingUp-UnityHubNewProject](/Images/SettingUp-UnityHubNewProject.png)
+![SettingUp-UnityHubNewProject](/Images/SettingUp-UnityHubNewProject.png)
 
 4. Tekan **Create** dan menunggu loading dari Unity untuk membuat Project Game 2D baru.
-[SettingUp-UnityInterface](/Images/SettingUp-UnityInterface.png)
+![SettingUp-UnityInterface](/Images/SettingUp-UnityInterface.png)
 
 ## D. Pengenalan Layout Unity
 ### Scene View
