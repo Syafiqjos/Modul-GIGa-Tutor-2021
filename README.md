@@ -155,7 +155,23 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![IntroductionGameObject-ForestTileEnvironmentResult](/Images/IntroductionGameObject-ForestTileEnvironmentResult.png)
 
 ### Membuat Level
-- bikin empty level desain sederhana, bikin graphic, jadikan gambar ke 32 pixel
+
+- Pada seluruh sprite pada Project Window, ubah **Pixels Per Unit** nya menjadi 32. Bisa dengan cara select menggunakan shift click pada sprite yang diinginkan.
+
+![IntroductionGameObject-CreateLevel32](/Images/IntroductionGameObject-CreateLevel32.png)
+
+ - Pada inspector ubah **Pixels Per Unit** nya menjadi 32, lalu Apply. Lakukan pada semua sprite yang ada (Bullet, Environment, Mushroom, Player dan UI).
+
+![IntroductionGameObject-CreateLevel32Apply](/Images/IntroductionGameObject-CreateLevel32Apply.png)
+
+- Dengan cara drag and drop dari Project Window ke Graphic dan jadikan sprite tersebut sebagai child dari Environment, hias Level mu sesuai keinginan!
+
+![IntroductionGameObject-CreateLevel32Result](/Images/IntroductionGameObject-CreateLevel32Result.png)
+
+- Terkadang urutan tampilan sprite tidak benar, bisa diatur pada **Order in Layer** pada setiap Sprite Renderer.
+
+![IntroductionGameObject-CreateLevel32LayerOrder](/Images/IntroductionGameObject-CreateLevel32LayerOrder.png)
+
 - Menjelaskan tentang sprite order
 
 ### Menambahkan Physics
