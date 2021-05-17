@@ -333,21 +333,19 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118565813-0c5b7180-b79d-11eb-9d85-0a2363efb722.png)
 
-- Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D. Pada Rigidbody2D centang contraint Freeze Rotation Z. Pada Circle Collider2D sesuaikan ukuran dan letak circle collider dengan sprite bullet dan centang Is Trigger.
+- Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D. Pada Rigidbody2D ubah Body Type menjadi Kinematik dan centang contraint Freeze Rotation Z. Pada Circle Collider2D sesuaikan ukuran dan letak circle collider dengan sprite bullet dan centang Is Trigger.
+
+![image](https://user-images.githubusercontent.com/16128257/118566428-0a45e280-b79e-11eb-9c21-1e2a3fa78bf6.png)
 
 - Menjelaskan Is Trigger.
 
-![image](https://user-images.githubusercontent.com/16128257/118565300-25175780-b79c-11eb-9213-67d4ca988a04.png)
-
-![image](https://user-images.githubusercontent.com/16128257/118565355-37919100-b79c-11eb-8f49-96bdb6e6c757.png)
-
-- Membuat prefab GameObject Bullet dan simpan prefab Bullet pada folder Prefabs
-
-![image](https://user-images.githubusercontent.com/16128257/118565466-6871c600-b79c-11eb-8d89-fc198fc17437.png)
-
-- Buat Script untuk bullet dengan nama Bullet dan simpan pada folder Scripts
+- Buat Script untuk bullet dengan nama Bullet dan simpan pada folder Scripts. Lalu tambahkan component script Bullet ini pada GameObject Bullet.
 
 ![image](https://user-images.githubusercontent.com/16128257/118565486-732c5b00-b79c-11eb-8389-dd05616f359c.png)
+
+- Membuat prefab GameObject Bullet dan simpan prefab Bullet pada folder Prefabs. Setelah itu hapus GameObject Bullet dari Hierarchy.
+
+![image](https://user-images.githubusercontent.com/16128257/118565466-6871c600-b79c-11eb-8d89-fc198fc17437.png)
 
 - Berikut adalah script untuk Bullet
 
@@ -525,8 +523,46 @@ public class PlayerController : MonoBehaviour
 - Coba Test Play dan Tahan Z untuk melakukan shooting.
 
 ### Membuat Enemy
-- Menambah tag pada player, bullet dan enemy
+- Buat GameObject baru dan beri nama Mushroom lalu tambahkan child empty beri nama Graphic
+
+![image](https://user-images.githubusercontent.com/16128257/118566847-d9b27880-b79e-11eb-9625-326371a21be5.png)
+
+- Pada assets cari masuk ke Assets/Sprites/Mushroom dan ubah semua Pixel Per Unit dari sprites tersebut menjadi 32 lalu Apply.
+
+![image](https://user-images.githubusercontent.com/16128257/118566920-06ff2680-b79f-11eb-898f-143142196221.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118566936-13837f00-b79f-11eb-887d-146dac706f0f.png)
+
+- Pada Graphic tambahkan component Sprite Renderer dan pada field sprite pilih sprite mushroom_0 sebagai contoh.
+
+![image](https://user-images.githubusercontent.com/16128257/118566974-27c77c00-b79f-11eb-928c-998447aebe53.png)
+
+- Pada GameObject Mushroom tambahkan Rigidbody2D dan Box Collider2D. Pada Rigidbody2D centang contraint Freeze Rotation Z. Pada Box Collider2D sesuaikan ukuran dan letak box collider dengan sprite mushroom.
+
+![image](https://user-images.githubusercontent.com/16128257/118567090-5e9d9200-b79f-11eb-8195-d6f7c05d63b9.png)
+
+- Sebelum membuat code untuk Enemy. Buat tag untuk Player, Bullet dan Enemy dengan cara Klik Untagged lalu Add Tag.
+
+![image](https://user-images.githubusercontent.com/16128257/118566744-a839ad00-b79e-11eb-90a4-f9bf6bf51d8a.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118566793-c0113100-b79e-11eb-86d0-5ef18ee05219.png)
+
+- Jangan lupa untuk mengganti tag Mushroom ke tag Enemy
+
+![image](https://user-images.githubusercontent.com/16128257/118567155-7b39ca00-b79f-11eb-9da8-998d8124418d.png)
+
+- Tambahkan juga tag Bullet pada Bullet dan tag Player pada Player
+
+![image](https://user-images.githubusercontent.com/16128257/118567225-99072f00-b79f-11eb-94df-6b08803e75ff.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118567281-b50ad080-b79f-11eb-9fd2-c43d36888035.png)
+
+- Menjelaskan Tag
+
+- Jelasin bahwa tag player udah default
+
 - Membuat Code Enemy
+
 - Menjelaskan OnTriggerEnter
 - Menjelaskan OnCollisionEnter
 
