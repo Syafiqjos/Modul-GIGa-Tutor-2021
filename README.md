@@ -321,10 +321,31 @@ public class PlayerController : MonoBehaviour
 ![image](https://user-images.githubusercontent.com/16128257/118541420-d8238900-b77b-11eb-987b-57cb55448a0e.png)
 
 ### Membuat Fitur Player Menembak
-- Membuat prefab bullet
+- Buat GameObject baru dan beri nama Bullet
+- Tambahkan child empty beri nama Graphic
+- Pada Graphic tambahkan component Sprite Renderer dan pada field sprite pilih sprite Bullet
+- Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D, sesuaikan ukurannya dengan sprite bullet
+- Membuat prefab GameObject Bullet dan simpan prefab Bullet pada folder Prefabs
+- Buat Script untuk bullet dengan nama Bullet dan simpan pada folder Scripts
+- Berikut adalah script untuk Bullet
+
+```cs
+
+```
+
+- Menjelaskan kode bullet
+
+- Pada Script PlayerController modifikasi agar player dapat melakukan shooting bullet
+
+```cs
+
+```
+
+- Assign prefab Bullet pada component PlayerController
+
 - Menjelaskan Intantiate
+- 
 - Menjelaskan Quaternion
-- Memodifikasi code Player
 
 ### Membuat Enemy
 - Membuat Code Enemy
