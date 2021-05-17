@@ -561,14 +561,178 @@ public class PlayerController : MonoBehaviour
 
 - Jelasin bahwa tag player udah default
 
-- Membuat Code Enemy
+- Buat Script baru dan beri nama EnemyController.
+
+![image](https://user-images.githubusercontent.com/16128257/118567438-fef3b680-b79f-11eb-8424-6c8f8808ce24.png)
+
+- Berikut adalah code untuk EnemyController.
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
+{
+    [Header("Status")]
+    public float health = 20;
+    public float attack = 5;
+
+    public Transform attackTarget;
+
+    [Header("Configuration")]
+    [SerializeField] private float moveSpeed = 2.5f;
+
+    void Update()
+    {
+        Movement();
+
+        FallDie();
+    }
+
+    protected virtual void Movement()
+    {
+
+    }
+
+    public void DamagedBy(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
+    void FallDie()
+    {
+        if (transform.position.y < -20)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public float GetAttackDamage()
+    {
+        return attack;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
+        {
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet.targetTag == "Enemy")
+            {
+                float damage = bullet.GetDamage();
+                DamagedBy(damage);
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+}
+```
 
 - Menjelaskan OnTriggerEnter
 - Menjelaskan OnCollisionEnter
 
+- Code EnemyController akan digunakan sebagai parent class dari enemy yang akan kita buat. Jadi untuk menambah enemy baru kita dapat melakukan inherit pada Class EnemyController ini.
+
 ### Membuat Enemy Mushroom
-- Membuat Code Enemy Mushroom yang nge inherit Enemy
+- Buat Script baru dan beri nama EnemyMushroom
+
+![image](https://user-images.githubusercontent.com/16128257/118567680-6e69a600-b7a0-11eb-9187-4f17703a88a2.png)
+
+- Berikut adalah code script EnemyMushroom yang merupakan child class dari EnemyController.
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyMushroom : EnemyController
+{
+    [Header("Mushroom")]
+    [SerializeField] SpriteRenderer graphic;
+
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] private float bulletSpeed;
+
+    [SerializeField] private float attackMinDistance;
+    [SerializeField] private float attackTimeMax;
+
+    [SerializeField] private Vector3 shootOffset;
+    private float attackTime = 0;
+
+    protected override void Movement()
+    {
+        if (attackTarget)
+        {
+            float distance = Vector2.Distance(transform.position, attackTarget.position);
+            if (distance < attackMinDistance)
+            {
+                if (attackTarget.position.x < transform.position.x)
+                {
+                    graphic.flipX = true;
+                } else
+                {
+                    graphic.flipX = false;
+                }
+
+                if (attackTime < 0)
+                {
+                    Shoot();
+                    attackTime = attackTimeMax;
+                }
+
+                attackTime -= Time.deltaTime;
+            }
+        }
+    }
+
+    void Shoot()
+    {
+        int direction = (graphic.flipX == false ? 1 : -1);
+
+        Vector3 shootOffsetDirection = shootOffset;
+
+        if (direction < 0)
+        {
+            shootOffsetDirection.x *= -1;
+        }
+
+        Vector3 shootPos = transform.position + shootOffsetDirection;
+
+        GameObject bulletObj = Instantiate(bulletPrefab, shootPos, Quaternion.identity);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        bullet.Launch(new Vector2(direction, 0), "Player", bulletSpeed, attack);
+    }
+}
+```
+
+- Tambahkan Component EnemyMushroom pada GameObject Mushroom. Isi field graphic dengan child Graphic pada Mushroom dan Attack Target isi dengan Game Object Player.
+
+![image](https://user-images.githubusercontent.com/16128257/118568030-21d29a80-b7a1-11eb-90ab-40ce8766bf6c.png)
+
+- Karena mushroom menyerang dengan cara shooting bullet juga maka kita lakukan duplicate pada prefab Bullet dan ganti namanya menjadi EnemyBullet lalu ubah warnanya menjadi merah.
+
+![image](https://user-images.githubusercontent.com/16128257/118567908-dcae6880-b7a0-11eb-8f5b-ebd429990cc7.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118567930-eb951b00-b7a0-11eb-92c1-5f2a1c9f72d7.png)
+
+- Assign bullet pada component EnemyMushroom sebelumnya dengan EnemyBullet.
+
+![image](https://user-images.githubusercontent.com/16128257/118568030-21d29a80-b7a1-11eb-90ab-40ce8766bf6c.png)
+
 - Membuat Prefab untuk Enemy Mushroom
+
+![image](https://user-images.githubusercontent.com/16128257/118568139-63634580-b7a1-11eb-9708-84debc997102.png)
 
 ### Membuat Fitur Player Loncat
 - Menjelaskan Raycast
