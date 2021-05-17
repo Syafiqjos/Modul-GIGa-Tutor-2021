@@ -175,10 +175,30 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 - Menjelaskan tentang sprite order
 
 ### Menambahkan Physics
+
 - Menjelaskan physics2D
-- Pada player menambahkan RigidBody2D
-- Pada player menambahkan Capsule Collider2D
-- Pada environment menambahkan Box Collider2D pada tanah
+
+- Pada player menambahkan Rigidbody2D
+
+![image](https://user-images.githubusercontent.com/16128257/118537104-bd9ae100-b776-11eb-9ba0-913b7c661dc5.png)
+
+- Centang Freeze Rotation Z pada constraint Rigidbody2D
+
+![image](https://user-images.githubusercontent.com/16128257/118537260-f1760680-b776-11eb-8cfa-24e1ea66a9b8.png)
+
+- Tambahkan component Capsule Collider2D pada Player
+
+![image](https://user-images.githubusercontent.com/16128257/118537348-0ce11180-b777-11eb-9dfb-4644d46e5fd5.png)
+
+- Menjelaskan Capsule Collider2D
+
+- Ubah ukuran Collider sesuai dengan sprite Player
+
+![image](https://user-images.githubusercontent.com/16128257/118537486-339f4800-b777-11eb-8e64-166c1b6bc0ff.png)
+
+- Pada Environment tambahkan Box Collider2D pada tanah yang dapat dipijak Player dan sesuaikan ukuran collidernya
+
+![image](https://user-images.githubusercontent.com/16128257/118537687-77924d00-b777-11eb-920d-634632d7b66c.png)
 
 ### Membuat Prefab untuk Player
 - Menjelaskan prefabs
