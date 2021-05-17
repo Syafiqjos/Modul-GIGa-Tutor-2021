@@ -205,9 +205,26 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ### Membuat Prefab untuk Player
 - Menjelaskan prefabs
 
+- Pada Project Window, click kanan lalu Create > Folder untuk membuat folder baru pada Assets lalu beri nama Prefabs.
+
+![image](https://user-images.githubusercontent.com/16128257/118538961-0b184d80-b779-11eb-999c-f0c888967a09.png)
+
+- Buka Folder Prefabs tersebut, lalu pada Hierachy pilih Player dan drag pad Project Assets untuk membuat prefab Player.
+
+![image](https://user-images.githubusercontent.com/16128257/118539104-3864fb80-b779-11eb-84e1-f483d15ca4c9.png)
+
 ### Test Play pada Game
 - Menjelaskan Edit Mode pada Unity Editor
+
 - Menjelaskan Game Mode pada Unity Editor
+
+- Lakukan test Play dengan menekan tombol Play
+
+![image](https://user-images.githubusercontent.com/16128257/118539260-6b0ef400-b779-11eb-828b-32632590c616.png)
+
+- Tampilan Game Mode, Player akan jatuh karena pengaruh Rigidbody2D
+
+![image](https://user-images.githubusercontent.com/16128257/118539507-b1645300-b779-11eb-9b02-22fd37c2dc97.png)
 
 ## G. Membuat Entitas pada Game
 ### Membuat Code Player
