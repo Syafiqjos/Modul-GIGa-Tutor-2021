@@ -224,18 +224,101 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Tampilan Game Mode, Player akan jatuh karena pengaruh Rigidbody2D
 
-![image](https://user-images.githubusercontent.com/16128257/118539507-b1645300-b779-11eb-9b02-22fd37c2dc97.png)
+![image](https://user-images.githubusercontent.com/16128257/118539766-0607ce00-b77a-11eb-8a7a-5c36a9626d32.png)
 
 ## G. Membuat Entitas pada Game
 ### Membuat Code Player
-- Menjelaskan bahasa C#
+- Buat Folder baru dengan nama Scripts dan buat Script baru dengan Create > C# Script dan beri nama PlayerController
+
+![image](https://user-images.githubusercontent.com/16128257/118540915-4b78cb00-b77b-11eb-9bb3-04562c6e57c4.png)
+
+- Drag Script PlayerController dan drag pada gameobject Player pada Hierarchy. Atau bisa juga dengan klik Player dulu, lalu drag script PlayerController ke Inspector.
+
+![image](https://user-images.githubusercontent.com/16128257/118541126-8ed33980-b77b-11eb-8af8-92a90a4f1aea.png)
+
+- Menjelaskan bahwa Unity menggunakan bahasa C#
+
+- Klik dua kali script PlayerController dan masukkan Code Player berikut untuk Code Input dan Jalan
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public static PlayerController Instance { get; private set; }
+
+    [Header("Properties")]
+    [SerializeField] private SpriteRenderer graphic;
+
+    [Header("Status")]
+    public float health = 100;
+    public float attack = 5;
+
+    public bool canBeMoved = true;
+
+    public float healthMax { private set; get; }
+
+    [Header("Configuration")]
+    [SerializeField] private float moveSpeed = 2.5f;
+
+    private Rigidbody2D rb2;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start()
+    {
+        rb2 = GetComponent<Rigidbody2D>();        
+
+        healthMax = health;
+    }
+
+    void Update()
+    {
+        if (canBeMoved)
+        {
+            MovementController();
+        }
+    }
+
+    void MovementController()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+
+        Vector2 direction = rb2.velocity;
+        direction.x = x * moveSpeed;
+
+        rb2.velocity = direction;
+
+        //sprite dibalik ketika arahnya ke kiri
+        if (direction.x < 0)
+        {
+            graphic.flipX = true;
+        } else if (direction.x > 0)
+        {
+            graphic.flipX = false;
+        }
+    }
+}
+```
+
 - Menjelaskan Awake, Start, Update, Input
 - Menjelaskan Vector3 dan Vector2
 - Menjelaskan private / public
 - Menjelaskan attribute [Serilizeable]
 - Menjelaskan GetComponent
-- Bisa Jalan dulu
-- List code ada disini nanti
+
+- Assign Child Player (Graphic) pada Field Graphic Player Controller.
+
+![image](https://user-images.githubusercontent.com/16128257/118540567-e624da00-b77a-11eb-855b-3fc8573ce65d.png)
+
+- Coba Play dan test jalan dengan menggunakan Arrow Key kiri dan kanan. Gimana, Keren kan !?
+
+![image](https://user-images.githubusercontent.com/16128257/118541420-d8238900-b77b-11eb-987b-57cb55448a0e.png)
 
 ### Membuat Fitur Player Menembak
 - Membuat prefab bullet
