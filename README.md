@@ -109,9 +109,50 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 - Menjelaskan Transform (lagi).
 
 ### Mencoba Sprite Slicing untuk Forest Tile
+
+- Pada Project Assets pilih Sprite forest_tile.png.
+
+![IntroductionGameObject-ForestTileAssets](/Images/IntroductionGameObject-ForestTileAssets.png)
+
+- Pada Inspector ubah Sprite Mode menjadi **Multiple**, Pixels Per Unit menjadi **32**, Mesh Type menjadi **Full Rect**  lalu **Apply**.
+
+![IntroductionGameObject-ForestTileInspector](/Images/IntroductionGameObject-ForestTileInspector.png)
+
+- Pada Inspector lagi, klik button **Sprite Editor**
+
+![IntroductionGameObject-ForestTileInspectorSpriteEditor](/Images/IntroductionGameObject-ForestTileInspectorSpriteEditor.png)
+
+- Kemudian pada Sprite Editor pilih Slice lalu pilih **Grid by Cell Size** dan ganti Pixel Size menjadi 16x16. Kemudian klik Apply.
+
+![IntroductionGameObject-ForestTileSpriteEditor](/Images/IntroductionGameObject-ForestTileSpriteEditor.png)
+
 - Menjelaskan Sprite Slicing
+
+- Hasil slicing sprite dapat dilihat pada Project Window, maka setiap potongan kotak dapat digunakan secara terpisah.
+
+![IntroductionGameObject-ForestTileSliceResult](/Images/IntroductionGameObject-ForestTileSliceResult.png)
+
+- Buat Game Object Empty dan ganti namanya menjadi Environment. Game Object ini untuk menampung lingkungan / pijakan / dekorasi pada level nanti
+
+![IntroductionGameObject-ForestTileEnvironment](/Images/IntroductionGameObject-ForestTileEnvironment.png)
+
+- Coba cari kotak dengan nama forest_tile_57 dan drag and drop ke Game Object Environment pada Hierarchy dan ubah namanya menjadi nama lain agar mudah dikenali.
+
+![IntroductionGameObject-ForestTileEnvironmentHierarchy](/Images/IntroductionGameObject-ForestTileEnvironmentHierarchy.png)
+
+- Pada SpriteRenderer ubah Draw Mode menjadi **Tiled**.
+
+![IntroductionGameObject-ForestTileEnvironmentSpriteRenderer](/Images/IntroductionGameObject-ForestTileEnvironmentSpriteRenderer.png)
+
 - Menjelaskan Sprite Tiling pada Sprite Renderer
-- jadikan gambar ke 32 pixel, slice level, pilih tile nomer (?) lupa heheh
+
+- Modifikasi ukuran dan posisi Sprite dengan bantuan tools transform yang ada.
+
+![IntroductionGameObject-ForestTileEnvironmentTilingResult](/Images/IntroductionGameObject-ForestTileEnvironmentTilingResult.png)
+
+- Dengan cara yang sama coba cari forest_tile_44 dan coba hias level sedemikian rupa agar indah dan cantik.
+
+![IntroductionGameObject-ForestTileEnvironmentResult](/Images/IntroductionGameObject-ForestTileEnvironmentResult.png)
 
 ### Membuat Level
 - bikin empty level desain sederhana, bikin graphic, jadikan gambar ke 32 pixel
@@ -125,6 +166,10 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ### Membuat Prefab untuk Player
 - Menjelaskan prefabs
+
+### Test Play pada Game
+- Menjelaskan Edit Mode pada Unity Editor
+- Menjelaskan Game Mode pada Unity Editor
 
 ## G. Membuat Entitas pada Game
 ### Membuat Code Player
