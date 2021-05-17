@@ -240,7 +240,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Klik dua kali script PlayerController dan masukkan Code Player berikut untuk Code Input dan Jalan
 
-```
+```cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
