@@ -180,7 +180,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Pada player menambahkan Rigidbody2D
 
-![image](https://user-images.githubusercontent.com/16128257/118537104-bd9ae100-b776-11eb-9ba0-913b7c661dc5.png)
+![image](https://user-images.githubusercontent.com/16128257/118537852-a7d9eb80-b777-11eb-9510-868082a8b1bc.png)
 
 - Centang Freeze Rotation Z pada constraint Rigidbody2D
 
@@ -197,6 +197,8 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![image](https://user-images.githubusercontent.com/16128257/118537486-339f4800-b777-11eb-8e64-166c1b6bc0ff.png)
 
 - Pada Environment tambahkan Box Collider2D pada tanah yang dapat dipijak Player dan sesuaikan ukuran collidernya
+
+![image](https://user-images.githubusercontent.com/16128257/118537926-bd4f1580-b777-11eb-8eed-7cb18829670d.png)
 
 ![image](https://user-images.githubusercontent.com/16128257/118537687-77924d00-b777-11eb-920d-634632d7b66c.png)
 
