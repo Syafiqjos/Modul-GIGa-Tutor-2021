@@ -321,16 +321,82 @@ public class PlayerController : MonoBehaviour
 ![image](https://user-images.githubusercontent.com/16128257/118541420-d8238900-b77b-11eb-987b-57cb55448a0e.png)
 
 ### Membuat Fitur Player Menembak
-- Buat GameObject baru dan beri nama Bullet
-- Tambahkan child empty beri nama Graphic
-- Pada Graphic tambahkan component Sprite Renderer dan pada field sprite pilih sprite Bullet
-- Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D, sesuaikan ukurannya dengan sprite bullet
+- Buat GameObject baru dan beri nama Bullet lalu tambahkan child empty beri nama Graphic
+
+![image](https://user-images.githubusercontent.com/16128257/118564897-665b3780-b79b-11eb-9220-497fe0abef23.png)
+
+- Pada assets cari sprite Bullet dan ubah Pixel Per Unit menjadi 32 lalu Apply.
+
+![image](https://user-images.githubusercontent.com/16128257/118565045-b1754a80-b79b-11eb-9508-d9ed14a4ccb1.png)
+
+- Pada Graphic tambahkan component Sprite Renderer dan pada field sprite pilih sprite Bullet dan ubah scale transform menjadi `(0.4, 0.4, 0.4)`
+
+![image](https://user-images.githubusercontent.com/16128257/118565158-dcf83500-b79b-11eb-89ff-ffdeafe73a09.png)
+
+- Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D. Pada Rigidbody2D centang contraint Freeze Rotation Z. Pada Circle Collider2D sesuaikan ukuran dan letak circle collider dengan sprite bullet dan centang Is Trigger.
+
+- Menjelaskan Is Trigger.
+
+![image](https://user-images.githubusercontent.com/16128257/118565300-25175780-b79c-11eb-9213-67d4ca988a04.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118565355-37919100-b79c-11eb-8f49-96bdb6e6c757.png)
+
 - Membuat prefab GameObject Bullet dan simpan prefab Bullet pada folder Prefabs
+
+![image](https://user-images.githubusercontent.com/16128257/118565466-6871c600-b79c-11eb-8d89-fc198fc17437.png)
+
 - Buat Script untuk bullet dengan nama Bullet dan simpan pada folder Scripts
+
+![image](https://user-images.githubusercontent.com/16128257/118565486-732c5b00-b79c-11eb-8389-dd05616f359c.png)
+
 - Berikut adalah script untuk Bullet
 
 ```cs
+using UnityEngine;
+using System.Collections;
 
+public class Bullet : MonoBehaviour
+{
+    [SerializeField] private float speed = 2;
+    [SerializeField] private float damage = 2;
+    [SerializeField] private float dieTime = 5;
+
+    public string targetTag = "Enemy";
+
+    private Vector2 direction;
+
+    private Rigidbody2D rb2;
+
+    void Start()
+    {
+        rb2 = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        rb2.velocity = direction.normalized * speed;
+
+        dieTime -= Time.deltaTime;
+
+        if (dieTime < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Launch(Vector2 direction, string targetTag, float speed, float damage)
+    {
+        this.direction = direction;
+        this.speed = speed;
+        this.damage = damage;
+        this.targetTag = targetTag;
+    }
+
+    public float GetDamage()
+    {
+        return damage;
+    }
+}
 ```
 
 - Menjelaskan kode bullet
@@ -338,16 +404,128 @@ public class PlayerController : MonoBehaviour
 - Pada Script PlayerController modifikasi agar player dapat melakukan shooting bullet
 
 ```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class PlayerController : MonoBehaviour
+{
+    public static PlayerController Instance { get; private set; }
+
+    [Header("Properties")]
+    [SerializeField] private SpriteRenderer graphic;
+
+    [Header("Status")]
+    public float health = 100;
+    public float attack = 5;
+
+    public bool canBeMoved = true;
+
+    public float healthMax { private set; get; }
+
+    private bool isShooting = true;
+
+    [Header("Configuration")]
+    [SerializeField] private float moveSpeed = 2.5f;
+    [SerializeField] private float shootingTimeMax = 1.0f;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float bulletSpeed = 10;
+
+    [SerializeField] private Vector2 gunOffset;
+
+    private float shootingTime = 0;
+
+    private Rigidbody2D rb2;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start()
+    {
+        rb2 = GetComponent<Rigidbody2D>();
+
+        shootingTime = shootingTimeMax;
+        healthMax = health;
+    }
+
+    void Update()
+    {
+        if (canBeMoved)
+        {
+            MovementController();
+            ShootController();
+        }
+    }
+
+    void MovementController()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+
+        Vector2 direction = rb2.velocity;
+        direction.x = x * moveSpeed;
+
+        rb2.velocity = direction;
+
+        //sprite dibalik ketika arahnya ke kiri
+        if (direction.x < 0)
+        {
+            graphic.flipX = true;
+        } else if (direction.x > 0)
+        {
+            graphic.flipX = false;
+        }
+    }
+
+    void ShootController()
+    {
+        isShooting = Input.GetKey(KeyCode.Z);
+
+        if (isShooting)
+        {
+            shootingTime -= Time.deltaTime;
+        } else
+        {
+            shootingTime = shootingTimeMax;
+        }
+
+        if (isShooting && shootingTime < 0)
+        {
+            shootingTime = shootingTimeMax;
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        int direction = (graphic.flipX == false ? 1 : -1);
+
+        Vector2 gunPos = new Vector2(gunOffset.x * direction + transform.position.x, gunOffset.y + transform.position.y);
+
+        GameObject bulletObj = Instantiate(bulletPrefab, gunPos, Quaternion.identity);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+
+        if (bullet)
+        {
+            bullet.Launch(new Vector2(direction, 0),"Enemy", bulletSpeed, attack);
+        }
+    }
+}
 ```
 
-- Assign prefab Bullet pada component PlayerController
+- Assign prefab Bullet pada component PlayerController.
 
-- Menjelaskan Intantiate
-- 
-- Menjelaskan Quaternion
+![image](https://user-images.githubusercontent.com/16128257/118565577-a2db6300-b79c-11eb-9028-bfb92b4120b2.png)
+
+- Menjelaskan Intantiate.
+ 
+- Menjelaskan Quaternion.
+
+- Coba Test Play dan Tahan Z untuk melakukan shooting.
 
 ### Membuat Enemy
+- Menambah tag pada player, bullet dan enemy
 - Membuat Code Enemy
 - Menjelaskan OnTriggerEnter
 - Menjelaskan OnCollisionEnter
