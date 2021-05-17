@@ -331,7 +331,7 @@ public class PlayerController : MonoBehaviour
 
 - Pada Graphic tambahkan component Sprite Renderer dan pada field sprite pilih sprite Bullet dan ubah scale transform menjadi `(0.4, 0.4, 0.4)`
 
-![image](https://user-images.githubusercontent.com/16128257/118565158-dcf83500-b79b-11eb-89ff-ffdeafe73a09.png)
+![image](https://user-images.githubusercontent.com/16128257/118565813-0c5b7180-b79d-11eb-9d85-0a2363efb722.png)
 
 - Pada GameObject Bullet tambahkan Rigidbody2D dan Circle Collider2D. Pada Rigidbody2D centang contraint Freeze Rotation Z. Pada Circle Collider2D sesuaikan ukuran dan letak circle collider dengan sprite bullet dan centang Is Trigger.
 
