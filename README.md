@@ -1270,17 +1270,46 @@ public class ScoreManager : MonoBehaviour
 ### Membuat UI
 - Menjelaskan UI
 
+- Buat GameObject Canvas untuk UI
 
+![image](https://user-images.githubusercontent.com/16128257/118587422-c74c3500-b7c6-11eb-8cd7-2cb815949a67.png)
 
 - Menjelaskan Canvas
+
+- Select GameObject Canvas dan ubah konfigurasi component Canvas dan Canvas Scaler sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/118587458-d6cb7e00-b7c6-11eb-954b-4c5f7868ed3c.png)
+
 - Menjelaskan CanvasScaler
-- Mengubah CanvasScaler
+
 - Menjelaskan Image UI
+
 - Menjelaskan Text UI
 
 ### Membuat Healthbar Player
-- Mengatur sprite dan UI
-- Membuat UI
+- Pada Project Assets masuk ke folder UI, ubah semua Pixels Per Unit sprite menjadi 32.
+
+![image](https://user-images.githubusercontent.com/16128257/118587662-345fca80-b7c7-11eb-9881-502faaaadb98.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118587689-3de93280-b7c7-11eb-8aca-fab5acc3f9f3.png)
+
+- Pada Hierarchy, klik kanan pada Canvas lalu Create Empty. Beri nama child tersebut menjadi Healthbar
+
+![image](https://user-images.githubusercontent.com/16128257/118587827-6ffa9480-b7c7-11eb-8bac-4d4093dd9c23.png)
+
+- Klik kanan lagi pada Healthbar, lalu pilih UI > Image. Lakukan sebanyak 3 kali karena masing - masing untuk Healthbar Bg, Healthbar Border, Healthbar sebelumnya.
+
+![image](https://user-images.githubusercontent.com/16128257/118587940-aafcc800-b7c7-11eb-928e-edfc282ad4aa.png)
+
+- Menjelaskan Sorting order pada canvas
+
+- Untuk masing - masing Image UI tersebut, assign sprite yang sesuai. Sesuaikan konfigurasinya seperti berikut agar healthbar terlihat rapi dan bagus.
+
+![image](https://user-images.githubusercontent.com/16128257/118588013-c962c380-b7c7-11eb-9659-dfa2a577d00f.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118588028-d1226800-b7c7-11eb-86f5-3baf84ec275c.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118588042-db446680-b7c7-11eb-99b6-23cb93050f01.png)
 
 ### Membuat Score UI
 - Mengatur sprite dan UI
