@@ -1340,9 +1340,65 @@ public class ScoreManager : MonoBehaviour
 ![image](https://user-images.githubusercontent.com/16128257/118589057-d1236780-b7c9-11eb-977f-b7d56382b3f0.png)
 
 ### Membuat UIManager
-- Membuat Code
-- Menggabungkan dengan GameManager dan ScoreManager
+
+- Agar UI dapat berubah seiring dengan Game dimainkan maka perlu sebuah script untuk mengatur UI tersebut.
+
+- Buat script baru pada folder Scripts dan beri nama menjadi UIManager.
+
+![image](https://user-images.githubusercontent.com/16128257/118589305-5018a000-b7ca-11eb-815e-d5f11365f5a2.png)
+
+- Berikut adalah code untuk UIManager
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIManager : MonoBehaviour
+{
+    public Text enemyProgressText;
+    public Image playerHealthBar;
+    public float playerHealthBarFullX = 78;
+
+    public GameObject gameOverUI;
+    public GameObject levelCompleteUI;
+
+    public PlayerController player;
+
+    void Update()
+    {
+        if (enemyProgressText)
+        {
+            enemyProgressText.text = ScoreManager.currentEnemyProgress + " of " + ScoreManager.targetEnemyProgress;
+        }
+
+        if (playerHealthBar)
+        {
+            Vector2 size = playerHealthBar.rectTransform.sizeDelta;
+            size.x = player.health / player.healthMax * playerHealthBarFullX;
+
+            playerHealthBar.rectTransform.sizeDelta = size;
+        }
+
+        if (levelCompleteUI && GameManager.isLevelComplete)
+        {
+            levelCompleteUI.SetActive(GameManager.isLevelComplete);
+        } else if (gameOverUI && GameManager.isGameOver)
+        {
+            gameOverUI.SetActive(GameManager.isGameOver);
+        }
+    }
+}
+```
+
 - Menjelaskan mengganti text dari code
+
+- Menggabungkan dengan GameManager dan ScoreManager
+
+- Kemudian tambahkan component UIManager pada GameObject GameMaster. Isi konfigurasi UI seperti berikut ini.
+
+![image](https://user-images.githubusercontent.com/16128257/118589417-8bb36a00-b7ca-11eb-8cf0-71fff3bfb3d6.png)
 
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
