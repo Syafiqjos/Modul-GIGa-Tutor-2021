@@ -1310,7 +1310,11 @@ public class ScoreManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118587940-aafcc800-b7c7-11eb-928e-edfc282ad4aa.png)
 
-- Menjelaskan Sorting order pada canvas
+- `Sorting Order`: Sorting order sistemnya seperti layer. object yang berada di bawah object lain (di panel `Hierarchy`) akan ditampilkan lebih depan. Contoh:
+![SortingOrder1](Images/CanvasSortingOrder1.png)
+Dapat dilihat dalam hierarchy object MainMenu dibawah Panel sehingga Object MainMenu berada di depan panel hitam. Coba kita balik urutannya:
+![SortingOrder2](Images/CanvasSortingOrder2.png)
+Bisa kita lihat saat order nya dibalik pabnel akan membelakangi object main menu.
 
 - Untuk masing - masing Image UI tersebut, assign sprite yang sesuai. Sesuaikan konfigurasinya seperti berikut agar healthbar terlihat rapi dan bagus.
 
@@ -1334,7 +1338,7 @@ public class ScoreManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118588836-670ac280-b7c9-11eb-9709-368533e751b3.png)
 
-- Menjelaskan UI Text
+- `UI Text` adalah komponen UI yang menampilkan text pada tampilan layar player.
 
 - Pada Component Text, ubah Text menjadi "4 of 10" sebagai contoh. Lalu ubah juga Font Size, Horizontal Overflow dan Vertical Overflow nya.
 
@@ -1436,7 +1440,7 @@ public class UIManager : MonoBehaviour
 }
 ```
 
-- Menjelaskan mengganti text dari code
+- Elemen UI yang berupa text dapat diubah melalui script/code. contoh nya adalah script berikut: `enemyProgressText.text = ScoreManager.currentEnemyProgress + " of " + ScoreManager.targetEnemyProgress;`. Nantinya UI Text yang ingin diubah akan diattach ke Component script yang sudah terpasang di GameMaster.
 
 - Menggabungkan dengan GameManager dan ScoreManager
 
@@ -1446,8 +1450,8 @@ public class UIManager : MonoBehaviour
 
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
-- Menjelaskan SceneManagement
-- Menjelaskan Build Settings
+- `Scene Management` (diatas)
+- `Build Settings` adalah window yang berisi pengaturan utamanya adalah memilih target platform dari build dari game yang sudah kita buat. Namun dari Build Settings kita juga dapat menambahkan scene dan mengatur urutan bagaimana setiap scene akan di*build*.
 - Pilih File > Build Settings pada Menu Bar untuk membuka Build Settings
 
 ![image](https://user-images.githubusercontent.com/16128257/118634741-157c2b00-b7fd-11eb-95df-ad6256d0faef.png)
@@ -1458,7 +1462,7 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118634977-4e1c0480-b7fd-11eb-8d39-d0d8fcfc6d94.png)
 
-- Menjelaskan buildIndex
+- `Build Index`: adalah index dari tiap scene yang akan dibuild. Index scene dimulai dari '0' hingga banyak scene-1.
 
 ### Membuat Scene Baru
 - Pada Project Window folder Scenes rename Scene sekarang menjadi "Level 1"
