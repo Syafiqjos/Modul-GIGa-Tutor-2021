@@ -1156,12 +1156,109 @@ public class CameraFollow : MonoBehaviour
 
 ## H. Membuat GameMaster yang mengontrol sebagian besar Game
 ### Membuat GameManager
+- Menjelaskan SceneManagement
+- Menjelaskan ActiveScene
+- Menjelaskan LoadScene
+- Menjelaskan buildIndex
 - Menjelaskan Singleton
 - Membuat Code GameManager
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public static bool isGameOver { get; private set; }
+    public static bool isLevelComplete { get; private set; }
+
+    private void Awake()
+    {
+        isGameOver = false;
+        isLevelComplete = false;
+    }
+
+    private void Update()
+    {
+        if (isLevelComplete)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                NextLevel();
+            }
+        }
+        else if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                RetryGame();
+            }
+        }
+    }
+
+    public static void GameOver()
+    {
+        isGameOver = true;
+    }
+
+    public static void CompleteLevel()
+    {
+        isLevelComplete = true;
+    }
+
+    public static void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public static void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+}
+```
 
 ### Membuat ScoreManager
 - Menjelaskan Singleton
 - Membuat Code ScoreManager
+
+```cs
+using UnityEngine;
+using System.Collections;
+
+public class ScoreManager : MonoBehaviour
+{
+    public static ScoreManager Instance { get; private set; }
+
+    public static int currentEnemyProgress { get; private set; }
+    public static int targetEnemyProgress { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        EnemyController[] enemyControllers = FindObjectsOfType<EnemyController>();
+
+        targetEnemyProgress = enemyControllers.Length;
+        currentEnemyProgress = 0;
+    }
+
+    public static void DefeatEnemy()
+    {
+        currentEnemyProgress += 1;
+
+        if (currentEnemyProgress >= targetEnemyProgress)
+        {
+            GameManager.CompleteLevel();
+        }
+    }
+}
+```
 
 ## I. Membuat UI untuk memperindah Game
 ### Membuat UI
@@ -1188,8 +1285,6 @@ public class CameraFollow : MonoBehaviour
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
 - Menjelaskan SceneManagement
-- Menjelaskan ActiveScene
-- Menjelaskan LoadScene
 - Menjelaskan buildIndex
 
 ### Membuat Scene Baru
