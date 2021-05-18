@@ -12,7 +12,6 @@ Contoh Tampilan Project Unity 3D dan 2D:
 ![Unity 3D Preview](Images/Unity3D-Preview.jpg)
 ![Unity 2D Preview](Images/Unity2D-Preview.jpg)
 
-
 ## B. Download Assets
 Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
 
@@ -38,81 +37,80 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - `Sceneview` adalah tempat dimana kita berinteraksi dengan *world* yang telah kita buat. Di dalam Sceneview kita dapat select, memanipulasi, menggerakkan (dan lain sebagainya) Camera, Lighting, dan GameObject lain yang berada di dalam Scene tersebut.    
 
-- Didalam satu project game Unity bisa terdapat beberapa `Scene`. Biasanya jika dalam project game tersebut terdapat sistem Tahapan Level maka 1 level tersebut direpesentasikan dengan 1 Scene. Jika kita ingin membuat Level baru dengan environment dan object yang mungkin berbeda, maka kita akan membuat scene baru. 
+- Didalam satu project game Unity bisa terdapat beberapa `Scene`. Biasanya jika dalam project game tersebut terdapat sistem Tahapan Level maka 1 level tersebut direpesentasikan dengan 1 Scene. Jika kita ingin membuat Level baru dengan environment dan object yang mungkin berbeda, maka kita akan membuat scene baru. Scene baru juga bisa dibuat untuk membuat main menu, Score Detail Scene dan lain sebagainya. 
 ### Game View
 
 ![LayoutUnity-GameView](Images/LayoutUnity-GameView.png)
 
 - `GameView` adalah bentuk rendered dari scene yang telah dibangun dari perspektif camera. Secara singkatnya GameView berfungsi untuk preview bagaimana nantinya game kita jika dimainkan. Dengan GameView, kita bisa test memainkan game yang kita buat sebelum diBuild menjadi game utuh. Untuk menjalankan/test Game melalui GameView kita bisa menggunakan tombol  play berikut:
-![GameView-Play](Images/GameViewPlay.png)
-
-
+![GameView-Play](Images/PlayGameView.png)
 
 ### Project Window
 
 ![LayoutUnity-ProjectWindow](Images/LayoutUnity-ProjectWindow.png)
 
-- Menjelaskan Project Window
+- `Project Window` adalah window yang menampilkan semua files yang berhubungan dengan project kita. Project Window juga berfungsi untuk navigate dan mengatur/manage asset dan project files dalam suatu project. Semacam File Explorer dalam Windows, kita dapat membuat folder dalam Project Window agar para files bisa tersusun secara rapi (Semua Files yang berada di Project juga bisa diakses/dilihat dari File Explorer Windows).
 ### Hierarchy
 
 ![LayoutUnity-Hierarchy](Images/LayoutUnity-Hierarchy.png)
 
-- Menjelaskan Hierarchy
+- `Hierarchy` atau `Hierarchy Window` mengandung dan menampilkan semua GameObject yang berhubungan dalam Scene yang sedang dikerjakan. GameObject seperti camera, lighting ,model 3D, dsb yang digunakan dalam Scene pasti akan tertampil dalam Hierarchy.
+
+- Dalam Hierarchy dikenal namanya `Parenting`. 
 ### Inspector
 
 ![LayoutUnity-Inspector](Images/LayoutUnity-Inspector.png)
 
-- Menjelaskan Inspector
-- Menjelaskan GameObject
-- Menjelaskan Component
-- Menjelaskan bahwa Transform termasuk Component
+- `Inspector` befungsi untuk mengatur *properties* dan pengaturan untuk hampir semua yang ada di Unity Editor. Seperti GameObject, Unity Component, Assets, Materials, dan lain sebagainya.
+- `GameObject` adalah *base class* dari semua entitas yang berada dalam suatu Scene. Secara umumnya entitas yang berada dalam Scene seperti Camera, Lighting, Player, dan lain-lain base nya adalah GameObject. Dalam contoh Lighting/Light Object merupakan GameObject dengan menambahkan Light `Component` ke GameObject.
+- `Component` adalah behaviour dari GameObject. Component yang terdapat di GameObject bisa dilihat di Inspector Window. Transform yang mengatur posisi, scale, dan rotasi suatu object merupakan salah satu Component Object. 
 
 ## E. Import Assets
 
 ### Extract file Assets yang telah didownload sebelumnya pada lokasi Project yang barusan dibuat.
 
-![ImportAssets-Extract](/Images/ImportAssets-Extract.png)
+![ImportAssets-Extract](Images/ImportAssets-Extract.png)
 
 ### Sehingga struktur project yang baru kurang lebih seperti berikut ini.
 
-![ImportAssets-Structure](/Images/ImportAssets-Structure.png)
+![ImportAssets-Structure](Images/ImportAssets-Structure.png)
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
 - Menjelaskan GameObject (lagi).
 - Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty.
 
-![IntroductionGameObject-PlayerEmpty](/Images/IntroductionGameObject-PlayerEmpty.png)
+![IntroductionGameObject-PlayerEmpty](Images/IntroductionGameObject-PlayerEmpty.png)
 
 - Ganti nama GameObject ini menjadi Player.
 
-![IntroductionGameObject-PlayerRename](/Images/IntroductionGameObject-PlayerRename.png)
+![IntroductionGameObject-PlayerRename](Images/IntroductionGameObject-PlayerRename.png)
 
 - Pada Hierarchy, klik kanan pada Player dan pilih Create Empty dan ubah namanya menjadi Graphic.
 
-![IntroductionGameObject-PlayerCreateChild](/Images/IntroductionGameObject-PlayerCreateChild.png)
+![IntroductionGameObject-PlayerCreateChild](Images/IntroductionGameObject-PlayerCreateChild.png)
 
 - Pada child Player Graphic ini, tambahkan component Sprite Renderer.
 
-![IntroductionGameObject-PlayerAddSpriteRenderer](/Images/IntroductionGameObject-PlayerAddSpriteRenderer.png)
+![IntroductionGameObject-PlayerAddSpriteRenderer](Images/IntroductionGameObject-PlayerAddSpriteRenderer.png)
 
 - Menjelaskan Sprite Renderer.
 
 - Navigasi pada `Assets/Sprites/Player` dan pilih salah satu Sprite, dalam modul ini kami menggunakan `player_idle_0.png` sebagai contoh.
 
-![IntroductionGameObject-PlayerSpriteAssets](/Images/IntroductionGameObject-PlayerSpriteAssets.png)
+![IntroductionGameObject-PlayerSpriteAssets](Images/IntroductionGameObject-PlayerSpriteAssets.png)
 
 - Klik pada sprite tersebut lalu pada Inspector ubah Pixels Per Unit menjadi 32 lalu Apply.
 
-![IntroductionGameObject-PlayerSpritePixels32](/Images/IntroductionGameObject-PlayerSpritePixels32.png)
+![IntroductionGameObject-PlayerSpritePixels32](Images/IntroductionGameObject-PlayerSpritePixels32.png)
 
 - Drag Sprite tersebut menuju field Sprite pada component SpriteRenderer yang ada pada GameObject Graphic.
 
-![IntroductionGameObject-PlayerSpriteAssign](/Images/IntroductionGameObject-PlayerSpriteAssign.png)
+![IntroductionGameObject-PlayerSpriteAssign](Images/IntroductionGameObject-PlayerSpriteAssign.png)
 
 - Jika berhasil, kita dapat melihat Player pada Scene View. Pilih Player lalu coba pindahkan posisinya dengan menggunakan axis transform.
 
-![IntroductionGameObject-PlayerPreview](/Images/IntroductionGameObject-PlayerPreview.png)
+![IntroductionGameObject-PlayerPreview](Images/IntroductionGameObject-PlayerPreview.png)
 
 - Menjelaskan Transform (lagi).
 
@@ -120,33 +118,33 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Pada Project Assets pilih Sprite forest_tile.png.
 
-![IntroductionGameObject-ForestTileAssets](/Images/IntroductionGameObject-ForestTileAssets.png)
+![IntroductionGameObject-ForestTileAssets](Images/IntroductionGameObject-ForestTileAssets.png)
 
 - Pada Inspector ubah Sprite Mode menjadi **Multiple**, Pixels Per Unit menjadi **32**, Mesh Type menjadi **Full Rect**  lalu **Apply**.
 
-![IntroductionGameObject-ForestTileInspector](/Images/IntroductionGameObject-ForestTileInspector.png)
+![IntroductionGameObject-ForestTileInspector](Images/IntroductionGameObject-ForestTileInspector.png)
 
 - Pada Inspector lagi, klik button **Sprite Editor**
 
-![IntroductionGameObject-ForestTileInspectorSpriteEditor](/Images/IntroductionGameObject-ForestTileInspectorSpriteEditor.png)
+![IntroductionGameObject-ForestTileInspectorSpriteEditor](Images/IntroductionGameObject-ForestTileInspectorSpriteEditor.png)
 
 - Kemudian pada Sprite Editor pilih Slice lalu pilih **Grid by Cell Size** dan ganti Pixel Size menjadi 16x16. Kemudian klik Apply.
 
-![IntroductionGameObject-ForestTileSpriteEditor](/Images/IntroductionGameObject-ForestTileSpriteEditor.png)
+![IntroductionGameObject-ForestTileSpriteEditor](Images/IntroductionGameObject-ForestTileSpriteEditor.png)
 
 - Menjelaskan Sprite Slicing
 
 - Hasil slicing sprite dapat dilihat pada Project Window, maka setiap potongan kotak dapat digunakan secara terpisah.
 
-![IntroductionGameObject-ForestTileSliceResult](/Images/IntroductionGameObject-ForestTileSliceResult.png)
+![IntroductionGameObject-ForestTileSliceResult](Images/IntroductionGameObject-ForestTileSliceResult.png)
 
 - Buat Game Object Empty dan ganti namanya menjadi Environment. Game Object ini untuk menampung lingkungan / pijakan / dekorasi pada level nanti
 
-![IntroductionGameObject-ForestTileEnvironment](/Images/IntroductionGameObject-ForestTileEnvironment.png)
+![IntroductionGameObject-ForestTileEnvironment](Images/IntroductionGameObject-ForestTileEnvironment.png)
 
 - Coba cari kotak dengan nama forest_tile_57 dan drag and drop ke Game Object Environment pada Hierarchy dan ubah namanya menjadi nama lain agar mudah dikenali.
 
-![IntroductionGameObject-ForestTileEnvironmentHierarchy](/Images/IntroductionGameObject-ForestTileEnvironmentHierarchy.png)
+![IntroductionGameObject-ForestTileEnvironmentHierarchy](Images/IntroductionGameObject-ForestTileEnvironmentHierarchy.png)
 
 - Pada SpriteRenderer ubah Draw Mode menjadi **Tiled**.
 
