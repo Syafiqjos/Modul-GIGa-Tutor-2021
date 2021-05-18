@@ -1100,7 +1100,7 @@ public class PlayerController : MonoBehaviour
 ```
 
 ### Membuat Camera Follow
-- `Camera` berfungsi sebagai object yang digunakan user/pemain untuk melihat world dari game yang sudah dibuat.
+- `Camera` berfungsi sebagai object yang digunakan user/pemain untuk melihat world dari game yang sudah dibuat. Tampilan pada `GameView` akan mengikuti arah view camera yang telah diatur.
 
 ![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
 
@@ -1165,11 +1165,11 @@ public class CameraFollow : MonoBehaviour
 
 ## H. Membuat GameMaster yang mengontrol sebagian besar Game
 ### Membuat GameManager
-- Menjelaskan SceneManagement
-- Menjelaskan ActiveScene
-- Menjelaskan LoadScene
-- Menjelaskan buildIndex
-- Menjelaskan Singleton
+- `SceneManagement` adalah salah satu library/module dalam script Unity yang berisi berbagai fungsi untuk *manage* para scenes yang sudah kita buat di unity. Bagaimana kita mengatur perpindahan dari scene A ke scene B, misal dari scene Main menu ke Scene Level 1 atau sebaliknya dan berbagai fungsi lain. 
+- `ActiveScene` adalah Scene yang sedang running/active saat game berjalan.
+- `LoadScene` berfungsi untuk memuat scene yang akan diakses selanjutnya/berpindah ke scene yang dipilih.
+- `buildIndex`: Setiap Scene pasti mempunyai index nya sendiri (diatur saat akan build game). Sehingga jika ingin memanggil suatu Scene tinggal memanggil index dari scene tersebut. Contoh :```SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);``` berarti kita mengakses Scene yang index nya lebih 1 dari Active Scene yang sedang berjalan.
+- Menjelaskan Singleton (belumIDK)
 - Membuat Code GameManager
 
 ```cs
@@ -1201,7 +1201,7 @@ public class GameManager : MonoBehaviour
         else if (isGameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
+            { 
                 RetryGame();
             }
         }
@@ -1230,7 +1230,7 @@ public class GameManager : MonoBehaviour
 ```
 
 ### Membuat ScoreManager
-- Menjelaskan Singleton
+- Menjelaskan Singleton (belumIDK)
 - Membuat Code ScoreManager
 
 ```cs
@@ -1277,23 +1277,23 @@ public class ScoreManager : MonoBehaviour
 
 ## I. Membuat UI untuk memperindah Game
 ### Membuat UI
-- Menjelaskan UI
+- `UI` atau kepanjangannya adalah `User Interface` adalah salah satu komponen dalam game yang sangat penting. UI berfungsi sebagai sistem komponen visual yang berfungsi menjembatani user/player dengan game yang kita buat. Bagaimana player dari game kita berinteraksi dengan game, informasi penting dari game yang ditampilkan ke player, status dari game kita (Game Over dan sejenisnya) termasuk fungsi dari User Interface. UI dapat meliputi tampilan HUD dalam game, tombol-tombol, hingga tampilan pengaturan game.
 
 - Buat GameObject Canvas untuk UI
 
 ![image](https://user-images.githubusercontent.com/16128257/118587422-c74c3500-b7c6-11eb-8cd7-2cb815949a67.png)
 
-- Menjelaskan Canvas
+- `Canvas` adalah tempat dimana semua yang berhubungan dengan komponen UI dalam game ditaruh dan diatur placementnya. Tampilan canvas bisa diatur melalui `Scene View`.
 
 - Select GameObject Canvas dan ubah konfigurasi component Canvas dan Canvas Scaler sebagai berikut.
 
 ![image](https://user-images.githubusercontent.com/16128257/118587458-d6cb7e00-b7c6-11eb-954b-4c5f7868ed3c.png)
 
-- Menjelaskan CanvasScaler
+- `Canvas Scaler` adalah `Component` dari UI yang berfungsi mengatur overall scale dan pixel density dari semua element UI yang berada di dalam Canvas. Oleh karena itu, saat mengubah/mengatur di Canvas Scaler, semua elemen UI yang berada di Canvas yang telah dipilih akan terpengaruh (dari segi ukuran (scale dan pixel)).
 
-- Menjelaskan Image UI
+- Menjelaskan Image UI (belumIDK).
 
-- Menjelaskan Text UI
+- Menjelaskan Text UI (belumIDK).
 
 ### Membuat Healthbar Player
 - Pada Project Assets masuk ke folder UI, ubah semua Pixels Per Unit sprite menjadi 32.
