@@ -1,13 +1,17 @@
 # GiGa Tutor 2021
 ## Shooting-Platformer 2D Unity Tutorial
 
-![Gameplay-Overview](/Images/Gameplay-Overview.gif)
+![Gameplay-Overview](Images/Gameplay-Overview.gif)
 
 ## A. Pendahuluan
-Unity adalah gem enjin.
+Unity adalah cross-platform game engine dimana Unity adalah berfungsi sebagai aplikasi "editor" untuk pengembangan game (Semacam halnya Photoshop adalah aplikasi editor untuk manipulasi gambar).
 
-Project adalah project seperti itu.
-Scene adalah scene yang seperti ini.
+Dalam Unity, dikenal namanya "Unity Project". Unity project secara umunya dibedakan menjadi 2 yaitu Project 3D dan 2D. Dalam modul ini kita akan lebih lanjut membahas membuat game dalam Unity Project 2D.
+
+Contoh Tampilan Project Unity 3D dan 2D:
+![Unity 3D Preview](Images/Unity3D-Preview.jpg)
+![Unity 2D Preview](Images/Unity2D-Preview.jpg)
+
 
 ## B. Download Assets
 Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
@@ -15,44 +19,48 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ## C. Setting Up Project
 1. Buka Unity Hub yang telah di download.
 
-![SettingUp-UnityHub](/Images/SettingUp-UnityHub.png)
+![SettingUp-UnityHub](Images/SettingUp-UnityHub.png)
 
 2. Pilih New pada pojok kanan atas untuk membuat Project baru.
 
 3. Pilih Template 2D untuk membuat game 2D dan isi **Project Name** untuk Nama Project Game yang ingin dibuat dan **Location** untuk lokasi project yang akan ditempatkan.
 
-![SettingUp-UnityHubNewProject](/Images/SettingUp-UnityHubNewProject.png)
+![SettingUp-UnityHubNewProject](Images/SettingUp-UnityHubNewProject.png)
 
 4. Tekan **Create** dan menunggu loading dari Unity untuk membuat Project Game 2D baru.
 
-![SettingUp-UnityInterface](/Images/SettingUp-UnityInterface.png)
+![SettingUp-UnityInterface](Images/SettingUp-UnityInterface.png)
 
 ## D. Pengenalan Layout Unity
 ### Scene View
 
-![LayoutUnity-SceneView](/Images/LayoutUnity-SceneView.png)
+![LayoutUnity-SceneView](Images/LayoutUnity-SceneView.png)
 
-- Menjelaskan Scene View
-- Menjelaskan Project
-- Menjelaskan Scene
+- `Sceneview` adalah tempat dimana kita berinteraksi dengan *world* yang telah kita buat. Di dalam Sceneview kita dapat select, memanipulasi, menggerakkan (dan lain sebagainya) Camera, Lighting, dan GameObject lain yang berada di dalam Scene tersebut.    
+
+- Didalam satu project game Unity bisa terdapat beberapa `Scene`. Biasanya jika dalam project game tersebut terdapat sistem Tahapan Level maka 1 level tersebut direpesentasikan dengan 1 Scene. Jika kita ingin membuat Level baru dengan environment dan object yang mungkin berbeda, maka kita akan membuat scene baru. 
 ### Game View
 
-![LayoutUnity-GameView](/Images/LayoutUnity-GameView.png)
+![LayoutUnity-GameView](Images/LayoutUnity-GameView.png)
 
-- Menjelaskan Game View
+- `GameView` adalah bentuk rendered dari scene yang telah dibangun dari perspektif camera. Secara singkatnya GameView berfungsi untuk preview bagaimana nantinya game kita jika dimainkan. Dengan GameView, kita bisa test memainkan game yang kita buat sebelum diBuild menjadi game utuh. Untuk menjalankan/test Game melalui GameView kita bisa menggunakan tombol  play berikut:
+![GameView-Play](Images/GameViewPlay.png)
+
+
+
 ### Project Window
 
-![LayoutUnity-ProjectWindow](/Images/LayoutUnity-ProjectWindow.png)
+![LayoutUnity-ProjectWindow](Images/LayoutUnity-ProjectWindow.png)
 
 - Menjelaskan Project Window
 ### Hierarchy
 
-![LayoutUnity-Hierarchy](/Images/LayoutUnity-Hierarchy.png)
+![LayoutUnity-Hierarchy](Images/LayoutUnity-Hierarchy.png)
 
 - Menjelaskan Hierarchy
 ### Inspector
 
-![LayoutUnity-Inspector](/Images/LayoutUnity-Inspector.png)
+![LayoutUnity-Inspector](Images/LayoutUnity-Inspector.png)
 
 - Menjelaskan Inspector
 - Menjelaskan GameObject
