@@ -318,9 +318,14 @@ public class PlayerController : MonoBehaviour
 - Blok/Bagian `Start()` bekerja sebelum *first frame update* 
 - Blok/Bagian `Update()` akan bekerja sekali tiap 1 frame (akan bekerja berkali-kali secara terus menerus karena dalam game terdapat banyak frame per detik nya). 
 
-- Menjelaskan Vector3 dan Vector2
-- Menjelaskan private / public
-- Menjelaskan attribute [Serilizeable]
+- `Vector3`: Representasi gerakan (vector) 3 Dimensi dalam script.
+- `Vector2`: Representasi gerakan (vector) 2 Dimensi dalam script.
+
+- `private`: Private adalah salah satu *acces modifiers* dalam pemrograman berorientasi objek. Private sendiri berarti hanya dalam satu class yang sama yang dapat mengakses method atau variabel tersebut.
+- `public`: Public juga merupakan salah satu *acces modifiers*. kebalikannya dari private, public berarti method atau variabelnya bisa dilihat oleh class yang lain.
+- `atribut [Serializable]`: Atribut ini menandakan jika field yang diberi atribut ini dapat di*serialized* (field dapat diformat dan datanya disimpan oleh Unity).
+- `atribut [SerializeField]`: membuat field yang access modifiernya private dapat di*serialized*kan.
+
 - Menjelaskan GetComponent
 
 - Assign Child Player (Graphic) pada Field Graphic Player Controller.
@@ -525,7 +530,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118565577-a2db6300-b79c-11eb-9028-bfb92b4120b2.png)
 
-- `Instantiate` berfungsi untuk .
+- `Instantiate` berfungsi untuk (belumIDK).
  
 - `Quaternion` berfungsi untuk representasi rotasi dalam script. Jadi kita bisa mendapatkan informasi bagaimana posisi rotasi object dengan memanggil fungsi `Quarterion`.
 
@@ -566,7 +571,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118567281-b50ad080-b79f-11eb-9fd2-c43d36888035.png)
 
-- `Tag` adalah represntasi Object dalam bentuk "kata" yang dapat dikustomisasi. Misal dalam satu scene kita mempunyai 2 Objek Balok yang sama. Tag dapat membedakan GameObject yang sama tersebut jika memiliki purpose yang berbeda-beda. Tag sangat penting untuk mengindentifikasi object game didalam script. 
+- `Tag` adalah representasi Object dalam bentuk "kata" yang dapat dikustomisasi. Misal dalam satu scene kita mempunyai 2 Objek Balok yang sama. Tag dapat membedakan GameObject yang sama tersebut jika memiliki purpose yang berbeda-beda. Tag sangat penting untuk mengindentifikasi object game didalam script. 
 
 - Tag dari tiap object pasti diset default. Oleh karena itu player yang sudah kita buat sudah diset default.
 
@@ -896,7 +901,7 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
-
+(bawah ini belum)
 - Menjelaskan Raycast
 - Menjelaskan Raycast Hit
 - Menjelaskan Layer
@@ -1104,7 +1109,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
 
-- Menjelaskan Background Camera / Clear Flags, ganti menjadi Solid Color
+- Menjelaskan Background Camera / Clear Flags, ganti menjadi Solid Color (belumIDK)
 
 ![image](https://user-images.githubusercontent.com/16128257/118585791-cd8ce200-b7c3-11eb-9e28-eb11bd8ebd88.png)
 
@@ -1152,8 +1157,8 @@ public class CameraFollow : MonoBehaviour
 }
 ```
 
-- Menjelaskan Attribute Range
-- Menjelaskan Lerp
+- Menjelaskan Attribute Range (belumIDK).
+- Menjelaskan Lerp (belumIDK).
 
 - Tambahkan component script CameraFollow pada Game Object Main Camera
 
@@ -1290,10 +1295,6 @@ public class ScoreManager : MonoBehaviour
 ![image](https://user-images.githubusercontent.com/16128257/118587458-d6cb7e00-b7c6-11eb-954b-4c5f7868ed3c.png)
 
 - `Canvas Scaler` adalah `Component` dari UI yang berfungsi mengatur overall scale dan pixel density dari semua element UI yang berada di dalam Canvas. Oleh karena itu, saat mengubah/mengatur di Canvas Scaler, semua elemen UI yang berada di Canvas yang telah dipilih akan terpengaruh (dari segi ukuran (scale dan pixel)).
-
-- Menjelaskan Image UI (belumIDK).
-
-- Menjelaskan Text UI (belumIDK).
 
 ### Membuat Healthbar Player
 - Pada Project Assets masuk ke folder UI, ubah semua Pixels Per Unit sprite menjadi 32.
@@ -1450,7 +1451,6 @@ public class UIManager : MonoBehaviour
 
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
-- `Scene Management` (diatas)
 - `Build Settings` adalah window yang berisi pengaturan utamanya adalah memilih target platform dari build dari game yang sudah kita buat. Namun dari Build Settings kita juga dapat menambahkan scene dan mengatur urutan bagaimana setiap scene akan di*build*.
 - Pilih File > Build Settings pada Menu Bar untuk membuka Build Settings
 
@@ -1462,7 +1462,7 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118634977-4e1c0480-b7fd-11eb-8d39-d0d8fcfc6d94.png)
 
-- `Build Index`: adalah index dari tiap scene yang akan dibuild. Index scene dimulai dari '0' hingga banyak scene-1.
+- `Build Index`: adalah index dari tiap scene yang akan dibuild. Index scene dimulai dari '0' hingga banyak scene-1. Urutan Build Index berdasarkan penempatan scene pada Build Settings (Urutan dari atas ke bawah). 
 
 ### Membuat Scene Baru
 - Pada Project Window folder Scenes rename Scene sekarang menjadi "Level 1"
@@ -1493,13 +1493,11 @@ public class UIManager : MonoBehaviour
 
 ## K. Build Game agar game dapat Dimainkan!
 ### Pengenalan Platform
-- Menjelaskan platform apa aja yang bisa digunakan
+- Game yang ingin dibuild dapat dibuild ke versi berbagai platform. Misal kita rancang game kita untuk dimainkan di android, maka kita akan set platform build nya ke android. Begitu pula untuk yang lainnya.
 
 ![image](https://user-images.githubusercontent.com/16128257/118639663-56c30980-b802-11eb-8816-db716b1c59f5.png)
 
 ### Pengenalan Player Settings
-- Menjelaskan Cara export
-
 - Melakukan Build untuk Windows. Klik **Build** bukan yang **Build and Run**
 
 ![image](https://user-images.githubusercontent.com/16128257/118639840-883bd500-b802-11eb-812b-36fb288ce982.png)
