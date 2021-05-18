@@ -1491,11 +1491,11 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118639840-883bd500-b802-11eb-812b-36fb288ce982.png)
 
-- Pilih lokasi build, disarankan folder kosong.
+- Pilih lokasi build, disarankan folder kosong. Beri nama game dengan kata yang kamu sukai.
 
 ![image](https://user-images.githubusercontent.com/16128257/118640386-1adc7400-b803-11eb-9943-a9f60bef1143.png)
 
-- Tunggu hingga proses build selesai. Lalu coba Play Executable.
+- Tunggu hingga proses build selesai. Lalu coba Play Executable. Dalam modul ini nama game adalah Unlucid. Run Unlucid.exe untuk membuka game.
 
 ![image](https://user-images.githubusercontent.com/16128257/118640185-e1a40400-b802-11eb-800b-4611c7dc1f1b.png)
 
