@@ -1092,10 +1092,67 @@ public class PlayerController : MonoBehaviour
 
 ### Membuat Camera Follow
 - Menjelaskan Camera
-- Menjelaskan Background Camera
-- Mengubah warna Background Camera
+
+![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
+
+- Menjelaskan Background Camera / Clear Flags, ganti menjadi Solid Color
+
+![image](https://user-images.githubusercontent.com/16128257/118585791-cd8ce200-b7c3-11eb-9e28-eb11bd8ebd88.png)
+
+- Mengubah warna Background Camera, coba ubah warna background camera menjadi #03071C
+
+![image](https://user-images.githubusercontent.com/16128257/118585875-f0b79180-b7c3-11eb-8389-1b705ff5af3b.png)
+
 - Membuat code camera follow
+
+- Buat Script baru di folder Scripts dengan nama CameraFollow
+
+![image](https://user-images.githubusercontent.com/16128257/118585939-0dec6000-b7c4-11eb-94c3-cc605504a908.png)
+
+- Berikut adalah kode script untuk CameraFollow
+
+```cs
+using UnityEngine;
+using System.Collections;
+
+public class CameraFollow : MonoBehaviour
+{
+    public bool isFollowing = true;
+    public Transform target;
+
+    private Vector3 targetPos;
+    public Vector3 targetOffset;
+
+    [Range(0, 1.0f)] public float followRatio = 1.0f;
+
+    void Update()
+    {
+        if (target)
+        {
+            if (isFollowing)
+            {
+                targetPos = target.position + targetOffset;
+            }
+
+            Vector3 newPos = Vector3.Lerp(transform.position, targetPos, followRatio);
+            newPos.z = transform.position.z;
+
+            transform.position = newPos;
+        }
+    }
+}
+```
+
+- Menjelaskan Attribute Range
 - Menjelaskan Lerp
+
+- Tambahkan component script CameraFollow pada Game Object Main Camera
+
+![image](https://user-images.githubusercontent.com/16128257/118586123-5f94ea80-b7c4-11eb-9f95-8b38579ca3fd.png)
+
+- Assign Player pada field Target dan isi field yang lain sesuai kebutuhan
+
+![image](https://user-images.githubusercontent.com/16128257/118586192-7c312280-b7c4-11eb-9940-6ce22bd77f53.png)
 
 ## H. Membuat GameMaster yang mengontrol sebagian besar Game
 ### Membuat GameManager
