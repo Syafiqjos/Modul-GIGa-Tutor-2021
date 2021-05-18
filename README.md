@@ -1260,9 +1260,18 @@ public class ScoreManager : MonoBehaviour
 }
 ```
 
+### Membuat Game Master
+
+- Buat GameObject Empty baru, lalu tambahkan component GameManager dan ScoreManager
+
+![image](https://user-images.githubusercontent.com/16128257/118587202-645a9e00-b7c6-11eb-978f-8b2327245104.png)
+
 ## I. Membuat UI untuk memperindah Game
 ### Membuat UI
 - Menjelaskan UI
+
+
+
 - Menjelaskan Canvas
 - Menjelaskan CanvasScaler
 - Mengubah CanvasScaler
