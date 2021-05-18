@@ -1438,6 +1438,17 @@ public class UIManager : MonoBehaviour
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
 - Menjelaskan SceneManagement
+- Menjelaskan Build Settings
+- Pilih File > Build Settings pada Menu Bar untuk membuka Build Settings
+
+![image](https://user-images.githubusercontent.com/16128257/118634741-157c2b00-b7fd-11eb-95df-ad6256d0faef.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118634822-29279180-b7fd-11eb-956d-53645b1d6d4f.png)
+
+- Saat ini hanya ada 1 scene, jika belum ada maka tambahkan dengan menekan tombol **Add Open Scenes**
+
+![image](https://user-images.githubusercontent.com/16128257/118634977-4e1c0480-b7fd-11eb-8d39-d0d8fcfc6d94.png)
+
 - Menjelaskan buildIndex
 
 ### Membuat Scene Baru
