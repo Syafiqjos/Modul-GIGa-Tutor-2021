@@ -1316,8 +1316,28 @@ public class ScoreManager : MonoBehaviour
 ![image](https://user-images.githubusercontent.com/16128257/118588274-3f672a80-b7c8-11eb-9a3a-50e21805cb84.png)
 
 ### Membuat Score UI
-- Mengatur sprite dan UI
-- Membuat UI
+
+- Pada Hierarchy, klik kanan pada Canvas lalu Create Empty. Beri nama child tersebut menjadi EnemyProgress
+
+![image](https://user-images.githubusercontent.com/16128257/118588595-e350d600-b7c8-11eb-85ce-ad59fc3de043.png)
+
+- Klik kanan lagi pada EnemyProgress, lalu pilih UI > Text. Beri nama Text tersebut menjadi ProgressText. UI Text ini untuk melakukan track pada score Player.
+
+![image](https://user-images.githubusercontent.com/16128257/118588836-670ac280-b7c9-11eb-9709-368533e751b3.png)
+
+- Menjelaskan UI Text
+
+- Pada Component Text, ubah Text menjadi "4 of 10" sebagai contoh. Lalu ubah juga Font Size, Horizontal Overflow dan Vertical Overflow nya.
+
+![image](https://user-images.githubusercontent.com/16128257/118588874-7853cf00-b7c9-11eb-8b2f-6e2f566d136a.png)
+
+- Klik kanan lagi pada EnemyProgress, lalu pilih UI > Image. Beri nama Image tersebut menjadi ProgressCover. Image UI ini digunakan untuk hiasan score saja.
+
+![image](https://user-images.githubusercontent.com/16128257/118589021-bd780100-b7c9-11eb-9e44-a0637ba18838.png)
+
+- Berikut adalah tampilan sementara dari GameObject EnemyProgress.
+
+![image](https://user-images.githubusercontent.com/16128257/118589057-d1236780-b7c9-11eb-977f-b7d56382b3f0.png)
 
 ### Membuat UIManager
 - Membuat Code
