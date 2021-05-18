@@ -10,7 +10,7 @@ Dalam Unity, dikenal namanya "Unity Project". Unity project secara umunya dibeda
 
 Contoh Tampilan Project Unity 3D dan 2D:
 ![Unity 3D Preview](Images/Unity3D-Preview.jpg)
-![Unity 2D Preview](Images/Unity2D-Preview.jpg)
+![Unity 2D Preview](Images/Unity2D-preview.jpg)
 
 ## B. Download Assets
 Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
@@ -77,7 +77,8 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
-- Menjelaskan GameObject (lagi).
+- Untuk membuat object player, seperti yang dijelaskan di atas pasti berasal dari GameObject dasar. Nantinya GameObject yang dibuat menjadi Player akan diberi beberapa component yang dibutuhkan sehingga object Player dapat dimainkan. Componen yang umum untuk membangun suatu player biasanya adalah `RigidBody`,`Collider`,`Script Movement`, dan lain sebagainya (tergantung bagaimana player mau dibuat). Component yang nanti kita akan gunakan akan dijelaskan lebih lanjut. 
+
 - Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty.
 
 ![IntroductionGameObject-PlayerEmpty](Images/IntroductionGameObject-PlayerEmpty.png)
@@ -94,7 +95,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-PlayerAddSpriteRenderer](Images/IntroductionGameObject-PlayerAddSpriteRenderer.png)
 
-- Menjelaskan Sprite Renderer.
+- `Sprite Renderer` adalah suatu component di Unity yang berfungsi untuk render Sprite yang kita punya dan mengatur bagaimana Sprite tersebut tertampilkan di Scene.
 
 - Navigasi pada `Assets/Sprites/Player` dan pilih salah satu Sprite, dalam modul ini kami menggunakan `player_idle_0.png` sebagai contoh.
 
@@ -112,7 +113,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-PlayerPreview](Images/IntroductionGameObject-PlayerPreview.png)
 
-- Menjelaskan Transform (lagi).
+- Transform disini dapat diatur melalui Inspector Window(melalui Component Transport) atau bisa langsung dipindahkan memakai Transport Axis (bisa langsung menggunakan mouse untuk drag dan transform object yang diselect).
 
 ### Mencoba Sprite Slicing untuk Forest Tile
 
@@ -132,7 +133,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-ForestTileSpriteEditor](Images/IntroductionGameObject-ForestTileSpriteEditor.png)
 
-- Menjelaskan Sprite Slicing
+- `Sprite Slicing` adalah membagi kumpulan Sprite (biasanya Sprite yang objeknya sama tapi dengan detail yang berbeda akan dikumpulkan agar tersusun secara rapi/Sprite Sheet) menjadi sprite individual. Namun sprite slicing tidak hanya digunakan untuk Sprite sheet saja, tapi juga bisa pada sprite individual yang sudah ada, kita bagi menjadi beberapa sprite individual yang baru.
 
 - Hasil slicing sprite dapat dilihat pada Project Window, maka setiap potongan kotak dapat digunakan secara terpisah.
 
@@ -148,41 +149,42 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 - Pada SpriteRenderer ubah Draw Mode menjadi **Tiled**.
 
-![IntroductionGameObject-ForestTileEnvironmentSpriteRenderer](/Images/IntroductionGameObject-ForestTileEnvironmentSpriteRenderer.png)
+![IntroductionGameObject-ForestTileEnvironmentSpriteRenderer](Images/IntroductionGameObject-ForestTileEnvironmentSpriteRenderer.png)
 
-- Menjelaskan Sprite Tiling pada Sprite Renderer
+- `Sprite Tiling` seperti kata dasarnya *Tile*. Seperti lantai yang tiap *tile* (ubin) nya itu sama, sprite yang kita punya akan diduplikasi sehingga tidak perlu memasukkan sprite satu-satu. Jadi saat select object yang ingin tiling lalu kita tinggal mengatur width dan/atau Height yang kita preferensikan.
 
 - Modifikasi ukuran dan posisi Sprite dengan bantuan tools transform yang ada.
 
-![IntroductionGameObject-ForestTileEnvironmentTilingResult](/Images/IntroductionGameObject-ForestTileEnvironmentTilingResult.png)
+![IntroductionGameObject-ForestTileEnvironmentTilingResult](Images/IntroductionGameObject-ForestTileEnvironmentTilingResult.png)
 
 - Dengan cara yang sama coba cari forest_tile_44 dan coba hias level sedemikian rupa agar indah dan cantik.
 
-![IntroductionGameObject-ForestTileEnvironmentResult](/Images/IntroductionGameObject-ForestTileEnvironmentResult.png)
+![IntroductionGameObject-ForestTileEnvironmentResult](Images/IntroductionGameObject-ForestTileEnvironmentResult.png)
 
 ### Membuat Level
 
 - Pada seluruh sprite pada Project Window, ubah **Pixels Per Unit** nya menjadi 32. Bisa dengan cara select menggunakan shift click pada sprite yang diinginkan.
 
-![IntroductionGameObject-CreateLevel32](/Images/IntroductionGameObject-CreateLevel32.png)
+![IntroductionGameObject-CreateLevel32](Images/IntroductionGameObject-CreateLevel32.png)
 
  - Pada inspector ubah **Pixels Per Unit** nya menjadi 32, lalu Apply. Lakukan pada semua sprite yang ada (Bullet, Environment, Mushroom, Player dan UI).
 
-![IntroductionGameObject-CreateLevel32Apply](/Images/IntroductionGameObject-CreateLevel32Apply.png)
+![IntroductionGameObject-CreateLevel32Apply](Images/IntroductionGameObject-CreateLevel32Apply.png)
 
 - Dengan cara drag and drop dari Project Window ke Graphic dan jadikan sprite tersebut sebagai child dari Environment, hias Level mu sesuai keinginan!
 
-![IntroductionGameObject-CreateLevel32Result](/Images/IntroductionGameObject-CreateLevel32Result.png)
+![IntroductionGameObject-CreateLevel32Result](Images/IntroductionGameObject-CreateLevel32Result.png)
 
 - Terkadang urutan tampilan sprite tidak benar, bisa diatur pada **Order in Layer** pada setiap Sprite Renderer.
 
-![IntroductionGameObject-CreateLevel32LayerOrder](/Images/IntroductionGameObject-CreateLevel32LayerOrder.png)
+![IntroductionGameObject-CreateLevel32LayerOrder](Images/IntroductionGameObject-CreateLevel32LayerOrder.png)
 
-- Menjelaskan tentang sprite order
+- `Sprite Order` adalah ...
 
 ### Menambahkan Physics
 
-- Menjelaskan physics2D
+- `Physics 2D` adalah bagaimana mekanis fisika di game kita bekerja (dalam kasus ini fisika 2 dimensi nya bagaimana). Physiscs di Unity bisa meliputi `Gravity`,`Velocity`,`Speed Rotation` dan banyak lagi lainnya yang bisa kita atur melalui Global Setting untuk Physics 2D.
+![Physics 2D View](Images/Physics2D_properties.png)
 
 - Pada player menambahkan Rigidbody2D
 
@@ -196,7 +198,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![image](https://user-images.githubusercontent.com/16128257/118537348-0ce11180-b777-11eb-9dfb-4644d46e5fd5.png)
 
-- Menjelaskan Capsule Collider2D
+- `Capsule Collider 2D` adalah Component yang berfungsi untuk menetapkan batas bagaimana sebuah objek 2D dapat "bertabrakan"/Berinteraksi dengan objek lain.
 
 - Ubah ukuran Collider sesuai dengan sprite Player
 
@@ -209,7 +211,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![image](https://user-images.githubusercontent.com/16128257/118537687-77924d00-b777-11eb-920d-634632d7b66c.png)
 
 ### Membuat Prefab untuk Player
-- Menjelaskan prefabs
+- Dalam suatu Project di Unity kita bisa menggunakan suatu object dalam beberapa Scene (Karena biasanya setiap Scene memiliki object yang berbeda-beda). Jadi jika kita ingin menggunakan object tidak hanya di dalam satu Scene saja, kita dapat membuta object tersebut menjadi `Prefab`.
 
 - Pada Project Window, click kanan lalu Create > Folder untuk membuat folder baru pada Assets lalu beri nama Prefabs.
 
@@ -220,9 +222,9 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![image](https://user-images.githubusercontent.com/16128257/118539104-3864fb80-b779-11eb-84e1-f483d15ca4c9.png)
 
 ### Test Play pada Game
-- Menjelaskan Edit Mode pada Unity Editor
+- `Edit mode` adalah disaat kita dapat mengedit semua yang ada dalam Scene dan perubnahan tersebut bersifat **permanent**/**tersimpan** sehingga apabila beralih ke mode lain (Play Mode) perubahan yang kita lakukan tersebut tersimpan.
 
-- Menjelaskan Game Mode pada Unity Editor
+- `Game mode` adalah saat kita menjalankan play dan kita dapat berinteraksi dengan `game view`. Saat berada di Game Mode kita tetap dapat melakukan perubahan di scene view. Namun, perubahan yang kita lalukan hanya bersifat **temporary** sehingga saat kuita kembalikan ke edit mode, perubahan yag kita lalukan akan hilang. Game Mode dapat diaktifkan dengan menekan tombol play lalu tekan tombol stop untuk kembali ke Edit mode.
 
 - Lakukan test Play dengan menekan tombol Play
 
@@ -242,7 +244,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![image](https://user-images.githubusercontent.com/16128257/118541126-8ed33980-b77b-11eb-8af8-92a90a4f1aea.png)
 
-- Menjelaskan bahwa Unity menggunakan bahasa C#
+- Jika kita menggunakan Engine Unity maka setiap script yang ingin kita buat dan terapkan dalam engine harus menggunakan bahasa pemrograman `C#`. Script ini dapat kita terapkan ke object yang kita inginkan sebagai salah satu component GameObject. 
 
 - Klik dua kali script PlayerController dan masukkan Code Player berikut untuk Code Input dan Jalan
 
@@ -312,7 +314,10 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-- Menjelaskan Awake, Start, Update, Input
+- Blok/Bagian `Awake()` bekerja saat scene mulai/start.
+- Blok/Bagian `Start()` bekerja sebelum *first frame update* 
+- Blok/Bagian `Update()` akan bekerja sekali tiap 1 frame (akan bekerja berkali-kali secara terus menerus karena dalam game terdapat banyak frame per detik nya). 
+
 - Menjelaskan Vector3 dan Vector2
 - Menjelaskan private / public
 - Menjelaskan attribute [Serilizeable]
@@ -343,7 +348,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118566428-0a45e280-b79e-11eb-9c21-1e2a3fa78bf6.png)
 
-- Menjelaskan Is Trigger.
+- `IsTrigger` adalah collider yang dapat menjalankan script saat Collider tersebut menyentuh Trigger, Saat di Trigger, dan saat Exit dari object Trigger. IsTrigger di Script dapat dapat diTrigger dengan fungsi `OnTriggerEnter`,`OnTriggerStay`,dan `OnTriggerExit`.
 
 - Buat Script untuk bullet dengan nama Bullet dan simpan pada folder Scripts. Lalu tambahkan component script Bullet ini pada GameObject Bullet.
 
@@ -402,8 +407,6 @@ public class Bullet : MonoBehaviour
     }
 }
 ```
-
-- Menjelaskan kode bullet
 
 - Pada Script PlayerController modifikasi agar player dapat melakukan shooting bullet
 
@@ -522,9 +525,9 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118565577-a2db6300-b79c-11eb-9028-bfb92b4120b2.png)
 
-- Menjelaskan Intantiate.
+- `Instantiate` berfungsi untuk .
  
-- Menjelaskan Quaternion.
+- `Quaternion` berfungsi untuk representasi rotasi dalam script. Jadi kita bisa mendapatkan informasi bagaimana posisi rotasi object dengan memanggil fungsi `Quarterion`.
 
 - Coba Test Play dan Tahan Z untuk melakukan shooting.
 
@@ -1508,7 +1511,7 @@ public class UIManager : MonoBehaviour
 ## L. Selesai !!
 ### Game dapat dimainkan
 
-![Gameplay-Overview](/Images/Gameplay-Overview.gif)
+![Gameplay-Overview](Images/Gameplay-Overview.gif)
 
 ## M. Extra!! Menambahkan Animasi
 ### Pengenalan Animasi
