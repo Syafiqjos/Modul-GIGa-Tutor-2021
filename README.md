@@ -1311,6 +1311,10 @@ public class ScoreManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118588042-db446680-b7c7-11eb-99b6-23cb93050f01.png)
 
+- Berikut adalah hasil sementara dari Healthbar UI.
+
+![image](https://user-images.githubusercontent.com/16128257/118588274-3f672a80-b7c8-11eb-9a3a-50e21805cb84.png)
+
 ### Membuat Score UI
 - Mengatur sprite dan UI
 - Membuat UI
