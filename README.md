@@ -1,7 +1,7 @@
 # GiGa Tutor 2021
 ## Shooting-Platformer 2D Unity Tutorial
 
-[Gameplay-Overview](/Images/Gameplay-Overview.gif)
+![Gameplay-Overview](/Images/Gameplay-Overview.gif)
 
 ## A. Pendahuluan
 Unity adalah gem enjin.
@@ -1468,15 +1468,41 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118639234-def4df00-b801-11eb-9628-773adfd1e9fa.png)
 
+- Buat Scene Baru lagi dan coba buat tampilan seperti berikut. Beri nama scene tersebut End atau EndLevel.
+
+![image](https://user-images.githubusercontent.com/16128257/118639479-27ac9800-b802-11eb-9633-aaa798c6c295.png)
+
+- Kemudian tambahkan scene ini pada build
+
+![image](https://user-images.githubusercontent.com/16128257/118639575-43b03980-b802-11eb-8b69-3fb2b5d4aa98.png)
+
+- Coba Play Game dari scene Level 1 dan mainkan game mu.
+
 ## K. Build Game agar game dapat Dimainkan!
 ### Pengenalan Platform
 - Menjelaskan platform apa aja yang bisa digunakan
+
+![image](https://user-images.githubusercontent.com/16128257/118639663-56c30980-b802-11eb-8816-db716b1c59f5.png)
+
 ### Pengenalan Player Settings
 - Menjelaskan Cara export
-- Melakukan Build
+
+- Melakukan Build untuk Windows. Klik **Build** bukan yang **Build and Run**
+
+![image](https://user-images.githubusercontent.com/16128257/118639840-883bd500-b802-11eb-812b-36fb288ce982.png)
+
+- Pilih lokasi build, disarankan folder kosong.
+
+![image](https://user-images.githubusercontent.com/16128257/118640386-1adc7400-b803-11eb-9943-a9f60bef1143.png)
+
+- Tunggu hingga proses build selesai. Lalu coba Play Executable.
+
+![image](https://user-images.githubusercontent.com/16128257/118640185-e1a40400-b802-11eb-800b-4611c7dc1f1b.png)
 
 ## L. Selesai !!
 ### Game dapat dimainkan
+
+![Gameplay-Overview](/Images/Gameplay-Overview.gif)
 
 ## M. Extra!! Menambahkan Animasi
 ### Pengenalan Animasi
