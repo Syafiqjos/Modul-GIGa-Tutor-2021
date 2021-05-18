@@ -566,9 +566,9 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118567281-b50ad080-b79f-11eb-9fd2-c43d36888035.png)
 
-- Menjelaskan Tag
+- `Tag` adalah represntasi Object dalam bentuk "kata" yang dapat dikustomisasi. Misal dalam satu scene kita mempunyai 2 Objek Balok yang sama. Tag dapat membedakan GameObject yang sama tersebut jika memiliki purpose yang berbeda-beda. Tag sangat penting untuk mengindentifikasi object game didalam script. 
 
-- Jelasin bahwa tag player udah default
+- Tag dari tiap object pasti diset default. Oleh karena itu player yang sudah kita buat sudah diset default.
 
 - Buat Script baru dan beri nama EnemyController.
 
@@ -648,8 +648,8 @@ public class EnemyController : MonoBehaviour
 }
 ```
 
-- Menjelaskan OnTriggerEnter
-- Menjelaskan OnCollisionEnter
+- `OnTriggerEnter` bekerja saat collider "menyentuh" trigger.
+- `OnCollisionEnter` prinsipnya sama seperti OnTriggerEnter namun bekerja saat collider "bertabrak" atau bertemu dengan collider lain.
 
 - Code EnemyController akan digunakan sebagai parent class dari enemy yang akan kita buat. Jadi untuk menambah enemy baru kita dapat melakukan inherit pada Class EnemyController ini.
 
@@ -1100,7 +1100,7 @@ public class PlayerController : MonoBehaviour
 ```
 
 ### Membuat Camera Follow
-- Menjelaskan Camera
+- `Camera` berfungsi sebagai object yang digunakan user/pemain untuk melihat world dari game yang sudah dibuat.
 
 ![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
 
