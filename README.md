@@ -1339,6 +1339,41 @@ public class ScoreManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118589057-d1236780-b7c9-11eb-977f-b7d56382b3f0.png)
 
+### Membuat Tampilan Game Over
+- Pada Canvas, buat UI > Image dan beri nama GameOver untuk membuat vignette. Ubah warnanya menjadi hitam dan alpha yang tipis.
+
+![image](https://user-images.githubusercontent.com/16128257/118590230-3710ee80-b7cc-11eb-99bd-4b188e781172.png)
+
+- Lalu pada GameObject GameOver tambahkan child text untuk tulisan "Game Over" dan "Press Space to Retry Level".
+
+![image](https://user-images.githubusercontent.com/16128257/118590398-91aa4a80-b7cc-11eb-9c2a-36caf48c7acd.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118590360-7d664d80-b7cc-11eb-8144-154212ee7279.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118590308-6162ac00-b7cc-11eb-82d4-2d1ed309499a.png)
+
+- Berikut adalah tampilan sementara dari GameOver.
+
+![image](https://user-images.githubusercontent.com/16128257/118590462-af77af80-b7cc-11eb-9131-16159458006b.png)
+
+- Lalu Disable GameOver, karena kita ingin GameOver ditampilkan saat Game Over saja.
+
+![image](https://user-images.githubusercontent.com/16128257/118590501-c3bbac80-b7cc-11eb-974f-170edd65c44b.png)
+
+### Membuat Tampilan Level Complete
+
+- Duplicate UI GameOver dan ganti namanya menjadi LevelComplete
+
+![image](https://user-images.githubusercontent.com/16128257/118590606-eea60080-b7cc-11eb-96be-d063c184e58c.png)
+
+- Edit tulisan seperti yang diinginkan sehingga tampilan LevelComplete adalah sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/118590650-08474800-b7cd-11eb-9585-8d872eb86a0c.png)
+
+- Disable juga LevelComplete, karena kita ingin LevelComplete ditampilkan saat Level berhasil dimenangkan saja.
+
+![image](https://user-images.githubusercontent.com/16128257/118590697-2614ad00-b7cd-11eb-9bae-6208c3a3bf5a.png)
+
 ### Membuat UIManager
 
 - Agar UI dapat berubah seiring dengan Game dimainkan maka perlu sebuah script untuk mengatur UI tersebut.
