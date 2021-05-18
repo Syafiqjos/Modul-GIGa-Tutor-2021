@@ -1452,9 +1452,21 @@ public class UIManager : MonoBehaviour
 - Menjelaskan buildIndex
 
 ### Membuat Scene Baru
-- Melakukan Duplicate Scene
-- Memodifikasi Scene
+- Pada Project Window folder Scenes rename Scene sekarang menjadi "Level 1"
+
+![image](https://user-images.githubusercontent.com/16128257/118637291-d26f8700-b7ff-11eb-8722-73fcb6b8631b.png)
+
+- Kemudian, lelakukan Duplicate Scene dari Scene Level 1 dengan Ctrl + D lalu ubah namanya menjadi Level 2. Hal ini dapat diulangi untuk membuat level - level selanjutnya.
+
+![image](https://user-images.githubusercontent.com/16128257/118637392-f03cec00-b7ff-11eb-99f3-81148e71ccec.png)
+
+- Buka Scene Level 2 dan memodifikasi Scene tersebut. Sebagai contoh tambahkan enemy yang lebih banyak dari Level 1.
+
+![image](https://user-images.githubusercontent.com/16128257/118639161-cc7aa580-b801-11eb-8a09-a4b79fa6f2f9.png)
+
 - Menambah scene pada build
+
+![image](https://user-images.githubusercontent.com/16128257/118639234-def4df00-b801-11eb-9628-773adfd1e9fa.png)
 
 ## K. Build Game agar game dapat Dimainkan!
 ### Pengenalan Platform
