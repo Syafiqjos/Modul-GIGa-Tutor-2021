@@ -13,8 +13,10 @@ Dalam Unity, dikenal namanya "Unity Project". Unity project secara umunya dibeda
 
 Contoh Tampilan Project Unity 3D dan 2D:
 ![Unity 3D Preview](Images/Unity3D-Preview.jpg)
+Sumber: (https://www.iamag.co/)
 
 ![Unity 2D Preview](Images/Unity2D-preview.jpg)
+Sumber: (https://www.unity.com/)
 
 ## B. Download Assets
 Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](https://drive.google.com/file/d/1NOk7RWAwUmZ9mNOkndJDw4jE9vUCM96I/view?usp=drivesdk)
@@ -81,7 +83,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ## F. Pengenalan GameObject pada Unity
 ### Membuat Player
-- Untuk membuat object player, seperti yang dijelaskan di atas pasti berasal dari GameObject dasar. Nantinya GameObject yang dibuat menjadi Player akan diberi beberapa component yang dibutuhkan sehingga object Player dapat dimainkan. Componen yang umum untuk membangun suatu player biasanya adalah `RigidBody`,`Collider`,`Script Movement`, dan lain sebagainya (tergantung bagaimana player mau dibuat). Component yang nanti kita akan gunakan akan dijelaskan lebih lanjut. 
+- Untuk membuat object player, seperti yang dijelaskan di atas pasti berasal dari GameObject dasar. Nantinya GameObject yang dibuat menjadi Player akan diberi beberapa component yang dibutuhkan sehingga object Player dapat dimainkan. Component yang umum untuk membangun suatu player biasanya adalah `RigidBody`,`Collider`,`Script Movement`, dan lain sebagainya (tergantung bagaimana player mau dibuat). Component yang nanti kita akan gunakan akan dijelaskan lebih lanjut.
 
 - Buat GameObject kosong (Empty) dengan cara GameObject > Create Empty.
 
@@ -155,7 +157,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-ForestTileEnvironmentSpriteRenderer](Images/IntroductionGameObject-ForestTileEnvironmentSpriteRenderer.png)
 
-- `Sprite Tiling` seperti kata dasarnya *Tile*. Seperti lantai yang tiap *tile* (ubin) nya itu sama, sprite yang kita punya akan diduplikasi sehingga tidak perlu memasukkan sprite satu-satu. Jadi saat select object yang ingin tiling lalu kita tinggal mengatur width dan/atau Height yang kita preferensikan.
+- `Sprite Tiling` seperti kata dasarnya *Tile*. Seperti lantai yang tiap *tile* (ubin) nya itu sama, sprite yang kita punya akan diduplikasi sehingga tidak perlu memasukkan sprite satu-satu. Select object yang ingin kita tiling lalu kita tinggal mengatur width dan/atau Height yang kita preferensikan.
 
 - Modifikasi ukuran dan posisi Sprite dengan bantuan tools transform yang ada.
 
@@ -183,12 +185,13 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-CreateLevel32LayerOrder](Images/IntroductionGameObject-CreateLevel32LayerOrder.png)
 
-- `Sprite Order` adalah ...
+- `Sprite Order` adalah ... (belumIDK)
 
 ### Menambahkan Physics
 
 - `Physics 2D` adalah bagaimana mekanis fisika di game kita bekerja (dalam kasus ini fisika 2 dimensi nya bagaimana). Physiscs di Unity bisa meliputi `Gravity`,`Velocity`,`Speed Rotation` dan banyak lagi lainnya yang bisa kita atur melalui Global Setting untuk Physics 2D.
 ![Physics 2D View](Images/Physics2D_properties.png)
+Sumber: (www.unity.com)
 
 - Pada player menambahkan Rigidbody2D
 
@@ -215,7 +218,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![image](https://user-images.githubusercontent.com/16128257/118537687-77924d00-b777-11eb-920d-634632d7b66c.png)
 
 ### Membuat Prefab untuk Player
-- Dalam suatu Project di Unity kita bisa menggunakan suatu object dalam beberapa Scene (Karena biasanya setiap Scene memiliki object yang berbeda-beda). Jadi jika kita ingin menggunakan object tidak hanya di dalam satu Scene saja, kita dapat membuta object tersebut menjadi `Prefab`.
+- Dalam suatu Project di Unity kita bisa menggunakan suatu object dalam beberapa Scene (Karena biasanya setiap Scene memiliki object yang berbeda-beda antara 1 Scene dengan Scene yang lain). Jadi jika kita ingin menggunakan object tidak hanya di dalam satu Scene saja, kita dapat membuat object tersebut menjadi `Prefab`.
 
 - Pada Project Window, click kanan lalu Create > Folder untuk membuat folder baru pada Assets lalu beri nama Prefabs.
 
@@ -330,7 +333,7 @@ public class PlayerController : MonoBehaviour
 - `atribut [Serializable]`: Atribut ini menandakan jika field yang diberi atribut ini dapat di*serialized* (field dapat diformat dan datanya disimpan oleh Unity).
 - `atribut [SerializeField]`: membuat field yang access modifiernya private dapat di*serialized*kan.
 
-- `GetComponent` merupakan salah satu metode yang paling sering digunakan. `GetComponent` berfungsi untuk mendapatkan component pada suatu game object. Dengan ini kita dapat melakukan modifikasi pada suatu component yang diinginkan.
+- `GetComponent`: Berfungsi mendapatkan dan mengakses data dari Component GameObject. Sehingga kita bisa mendapatkan hingga merubah value dari Component GameObject melalui Script.
 
 - Assign Child Player (Graphic) pada Field Graphic Player Controller.
 
@@ -1326,7 +1329,7 @@ public class ScoreManager : MonoBehaviour
 ![SortingOrder1](Images/CanvasSortingOrder1.png)
 Dapat dilihat dalam hierarchy object MainMenu dibawah Panel sehingga Object MainMenu berada di depan panel hitam. Coba kita balik urutannya:
 ![SortingOrder2](Images/CanvasSortingOrder2.png)
-Bisa kita lihat saat order nya dibalik pabnel akan membelakangi object main menu.
+Bisa kita lihat saat order nya dibalik object panel akan membelakangi object main menu.
 
 - Untuk masing - masing Image UI tersebut, assign sprite yang sesuai. Sesuaikan konfigurasinya seperti berikut agar healthbar terlihat rapi dan bagus.
 
@@ -1462,7 +1465,7 @@ public class UIManager : MonoBehaviour
 
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
-- `Build Settings` adalah window yang berisi pengaturan utamanya adalah memilih target platform dari build dari game yang sudah kita buat. Namun dari Build Settings kita juga dapat menambahkan scene dan mengatur urutan bagaimana setiap scene akan di*build*.
+- `Build Settings` adalah window yang isi pengaturan utamanya adalah memilih target platform dari build dari game yang sudah kita buat. Namun dari Build Settings kita juga dapat menambahkan scene dan mengatur urutan bagaimana setiap scene akan di*build*.
 - Pilih File > Build Settings pada Menu Bar untuk membuka Build Settings
 
 ![image](https://user-images.githubusercontent.com/16128257/118634741-157c2b00-b7fd-11eb-95df-ad6256d0faef.png)
