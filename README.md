@@ -905,11 +905,14 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
-(bawah ini belum)
-- Menjelaskan Raycast
-- Menjelaskan Raycast Hit
-- Menjelaskan Layer
-- Menjelaskan Layer Mask
+
+- `Ray` dapat dimisalkan sebagai cahaya yang ditembakkan ke arah tertentu untuk mendapatkan `Raycast Hit`. Dalam Unity Ray dapat digunakan sebagai pengukur jarak dari posisi Ray ditembakkan ke arah yang dituju. Ray akan berhenti ketika melewati jarak yang diinginkan atau menabrak suatu Collider tertentu.
+
+- `Raycast Hit` merupakan hasil dari Ray yang ditembakkan. Terdapat banyak property pada RaycastHit. Contohnya adalah posisi berhenti, jarak hit dan banyak lainnya.
+
+- `Layer` merupakan suatu golongan yang dapat digunakan untuk mengelompokkan suatu game object pada scene. Namun fungsi layer tidak hanya terbatas untuk pengelompokan saja. Terdapat fungsi penting, salah satunya ada pada Camera, kita dapat mengatur layer mana saja yang dapat dirender oleh camra tersebut.
+
+- `Layer Mask` merupakan suatu layer yang digunakan untuk masking collider. Salah satu penggunaannya adalah saat melakukan Raycast dari titik tertentu, kita dapat mencegah ray itu hanya dapat menabrak collider yang berada pada layer "Obstacle" misalnya sehingga Raycast tidak terhenti pada collider Player.
 
 - Coba Play Test lalu tekan Up Arrow untuk loncat dengan Player.
 
@@ -1869,3 +1872,4 @@ Terima Kasih telah mengikuti GIGa Tutor 2021. Jangan lupa untuk registrasi dan d
 Registration : [http://bit.ly/RegistGIGaTalk2021](http://bit.ly/RegistGIGaTalk2021)
 
 ## Terima Kasih !!
+Kami nantikan kedatanganmu di GIGa Talk 👊😎
