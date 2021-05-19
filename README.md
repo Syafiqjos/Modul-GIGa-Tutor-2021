@@ -185,7 +185,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![IntroductionGameObject-CreateLevel32LayerOrder](Images/IntroductionGameObject-CreateLevel32LayerOrder.png)
 
-- `Sprite Order` adalah ... (belumIDK)
+- `Sprite Layer Order` adalah suatu fitur yang digunakan untuk mengatur urutan render dari suatu Sprite Renderer. Layer Order dengan nilai terbesar akan berada pada posisi paling depan, sedangkan nilai terkecil akan berada pada posisi paling bawah.
 
 ### Menambahkan Physics
 
