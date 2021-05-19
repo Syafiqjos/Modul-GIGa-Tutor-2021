@@ -1781,12 +1781,45 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-- Coba Play Game dan lihat animasi baru pada Player.
+- Coba Play Game dan amati animasi baru pada Player.
 
 ### Menambah Animasi pada Enemy
 
-- Mencoba test
-- Selesai
+- Pada folder Animations buat folder baru dengan nama "Mushroom"
+
+![image](https://user-images.githubusercontent.com/16128257/118838244-b9de9a00-b8ef-11eb-852c-4eeea1cfb823.png)
+
+- Lalu buat Animator Controller baru dengan nama MushroomAnimator dan Animation Clip dengan nama MushroomIdle.
+
+![image](https://user-images.githubusercontent.com/16128257/118838450-e4c8ee00-b8ef-11eb-87a4-1c712f9e7ca7.png)
+
+- Pada MushroomIdle aktifkan Loop Time.
+
+![image](https://user-images.githubusercontent.com/16128257/118838565-fa3e1800-b8ef-11eb-81ec-00fb94ee965b.png)
+
+- Pada prefab EnemyMushroom tambahkan component Animator. Assign MushroomAnimator pada component Animator tersebut.
+
+![image](https://user-images.githubusercontent.com/16128257/118839282-949e5b80-b8f0-11eb-8034-eaee3a0d9a6b.png)
+
+- Double click pada MushroomAnimator dan drag and drop MushroomIdle pada Animator Window.
+
+![image](https://user-images.githubusercontent.com/16128257/118838772-28235c80-b8f0-11eb-9b84-2a6c436fb597.png)
+
+- Double click pada Animation Clip MushroomIdle untuk membuka Animation Window.
+
+- Pada clip MushroomIdle click Add Property lalu tambahkan Graphic/SpriteRenderer/Sprite.
+
+![image](https://user-images.githubusercontent.com/16128257/118839692-e515b900-b8f0-11eb-8fe0-3e571eb6cd6e.png)
+
+- Pada Project Window masuk ke folder Sprites/Mushroom lalu pilih semua sprites mushroom_idle. Drag and drop sprites tersebut pada Animation Window bagian Graphic/SpriteRenderer/Sprite tadi.
+
+![image](https://user-images.githubusercontent.com/16128257/118839998-33c35300-b8f1-11eb-9851-d20d412880a4.png)
+
+- Ubah Samples Rate menjadi 10 dan sesuaikan seperti pada gambar diatas.
+
+- Pada Prefab Mushroom simpan perubahan agar seluruh Mushroom memiliki Animator yang sama.
+
+- Coba Play Game dan amati animasi baru pada Enemy Mushroom.
 
 ## N. Penutup
 Terima Kasih telah ditutup.
