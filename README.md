@@ -1517,12 +1517,24 @@ public class UIManager : MonoBehaviour
 
 ## M. Extra!! Menambahkan Animasi
 ### Pengenalan Animasi
-- Menjelaskan Animator
-- Menjelaskan Animation
-- Menjelaskan Transition
-- Menjelaskan Loop
-- Menjelaskan Parameter
+- Pada Project Window buat folder baru dan beri nama "Animations". Lalu pada folder Animations buat folder lagi dengan nama `Player`. Folder Player akan digunakan untuk menyimpan animasi dari Player.
+
+- Masuk ke folder Animation lalu buat Animator dengan cara klik kanan lalu `Create > Animator Controller` dan beri nama "PlayerAnimator".
+
+- `Animator` atau `Animator Controller` merupakan salah satu component di Unity yang digunakan untuk mengatur jalannya `Animation` pada suatu game object. 
+
+- `Animation` merupakan potongan clip animasi yang dapat digunakan pada `Animator`. Contoh `Animation` adalah clip Run, Jump, Walk, Idle dan lain sebagainya.
+
+- Pada Animator terdapat `Transition` yang digunakan untuk merubah jalannya animasi. Misal dari animasi Idle ke Run membutuhkan transition. Transition juga dicontrol berdasarkan arahan yang diberikan User. Misal animasi Jump hanya dapat dilakukan saat Idle atau Run, tetapi tidak bisa saat Sleep.
+
+- Animation Clip dapat berupa looping yang dapat di atur. Seperti namanya Animation `Looping` adalah animasi berulang, seperti Idle atau Running karena Animasi akan bergerak terus menerus.
+
+- Untuk berpindah `Transition` diperlukan parameter yang dapat mengatur jalannya animasi. Misal dari Idle ke Run hanya dapat dilakukan ketika parameter IsRunning bernilai true.
+
 - Melakukan code pada Player dan Enemy karena memiliki Animasi
+
+
+
 - Mencoba test
 - Selesai
 
