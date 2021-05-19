@@ -1519,21 +1519,59 @@ public class UIManager : MonoBehaviour
 ### Pengenalan Animasi
 - Pada Project Window buat folder baru dan beri nama "Animations". Lalu pada folder Animations buat folder lagi dengan nama `Player`. Folder Player akan digunakan untuk menyimpan animasi dari Player.
 
+![image](https://user-images.githubusercontent.com/16128257/118832628-fc51a800-b8ea-11eb-94f0-66276ee26638.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118832684-083d6a00-b8eb-11eb-8ce7-449cc1e7dd88.png)
+
 - Masuk ke folder Animation lalu buat Animator dengan cara klik kanan lalu `Create > Animator Controller` dan beri nama "PlayerAnimator".
+
+![image](https://user-images.githubusercontent.com/16128257/118832758-155a5900-b8eb-11eb-8869-9fb4a20158c1.png)
 
 - `Animator` atau `Animator Controller` merupakan salah satu component di Unity yang digunakan untuk mengatur jalannya `Animation` pada suatu game object. 
 
+- Masih di folder Animations/Player klik kanan lalu `Create > Animation` untuk membuat Animation Clip dan beri nama "PlayerIdle". Lakukan beberapa kali untuk membuat Animation Clip bernama "PlayerJumpUp", "PlayerJumpDown", "PlayerRun".
+
+![image](https://user-images.githubusercontent.com/16128257/118833935-0d4ee900-b8ec-11eb-8b0c-835e50352a47.png)
+
 - `Animation` merupakan potongan clip animasi yang dapat digunakan pada `Animator`. Contoh `Animation` adalah clip Run, Jump, Walk, Idle dan lain sebagainya.
+
+- Pada Hierarchy pilih Player, lalu tambahkan component Animator. Kemudian assign PlayerAnimator sebelumnya pada component tersebut.
+
+![image](https://user-images.githubusercontent.com/16128257/118834216-412a0e80-b8ec-11eb-9b40-6e4de09eee7a.png)
+
+- Double klik pada PlayerAnimator untuk membuka Animator Window.
+
+![image](https://user-images.githubusercontent.com/16128257/118834442-6d458f80-b8ec-11eb-9cff-363978d575e2.png)
+
+- Untuk setiap Animation Clip Player yang dibuat, drag and drop pada Animator Window ini.
+
+![image](https://user-images.githubusercontent.com/16128257/118834780-a5e56900-b8ec-11eb-8064-920e82530f70.png)
 
 - Pada Animator terdapat `Transition` yang digunakan untuk merubah jalannya animasi. Misal dari animasi Idle ke Run membutuhkan transition. Transition juga dicontrol berdasarkan arahan yang diberikan User. Misal animasi Jump hanya dapat dilakukan saat Idle atau Run, tetapi tidak bisa saat Sleep.
 
+- Pada Animator Window, Klik kanan pada Any State lalu **Make Transition** ke semua klip yang telah dimasukkan.
+
+![image](https://user-images.githubusercontent.com/16128257/118835120-e9d86e00-b8ec-11eb-945a-bdd9127436aa.png)
+
+- Any State maksudnya adalah transition dapat dilakukan pada state manapun. Sebagai contoh meskipun tidak ada transition dari PlayerIdle menuju PlayerRun, maka Any State tetap dapat menjadi penghubung transisi antara PlayerIdle menuju PlayerRun.
+
 - Animation Clip dapat berupa looping yang dapat di atur. Seperti namanya Animation `Looping` adalah animasi berulang, seperti Idle atau Running karena Animasi akan bergerak terus menerus.
+
+- Untuk setiap Animation Clip Player enable Loop Time.
+
+![image](https://user-images.githubusercontent.com/16128257/118835481-3de35280-b8ed-11eb-9fee-e4307d633386.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118835595-59e6f400-b8ed-11eb-88fb-540c104d8071.png)
 
 - Untuk berpindah `Transition` diperlukan parameter yang dapat mengatur jalannya animasi. Misal dari Idle ke Run hanya dapat dilakukan ketika parameter IsRunning bernilai true.
 
+- Pada PlayerAnimator, tambahkan parameter bertipe boolean dan beri nama isGrounded. Lalu parameter velocityX dan velocityY yang bertipe integer.
+
+![image](https://user-images.githubusercontent.com/16128257/118835701-708d4b00-b8ed-11eb-9e7a-6feeffff5af6.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118836005-b21df600-b8ed-11eb-9130-cbc709b03528.png)
+
 - Melakukan code pada Player dan Enemy karena memiliki Animasi
-
-
 
 - Mencoba test
 - Selesai
