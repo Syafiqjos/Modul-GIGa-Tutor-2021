@@ -330,7 +330,7 @@ public class PlayerController : MonoBehaviour
 - `atribut [Serializable]`: Atribut ini menandakan jika field yang diberi atribut ini dapat di*serialized* (field dapat diformat dan datanya disimpan oleh Unity).
 - `atribut [SerializeField]`: membuat field yang access modifiernya private dapat di*serialized*kan.
 
-- Menjelaskan GetComponent
+- `GetComponent` merupakan salah satu metode yang paling sering digunakan. `GetComponent` berfungsi untuk mendapatkan component pada suatu game object. Dengan ini kita dapat melakukan modifikasi pada suatu component yang diinginkan.
 
 - Assign Child Player (Graphic) pada Field Graphic Player Controller.
 
