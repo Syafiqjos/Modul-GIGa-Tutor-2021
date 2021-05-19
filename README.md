@@ -1595,7 +1595,17 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118836005-b21df600-b8ed-11eb-9130-cbc709b03528.png)
 
-- Transition dapat berubah karena perubahan Parameter. Oleh karena itu kita perlu melakukan modifikasi pada code PlayerController dan menambahkan perubahan paramter. Berikut adalah code PlayerController yang telah dimodifikasi.
+- Untuk melakukan transisi diperlukan `Condition` untuk mengatur alur Transition. Untuk setiap Transition ubah konfigurasinya seperti berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/118845702-36747700-b8f6-11eb-9398-945bf2b1f661.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118845770-47bd8380-b8f6-11eb-9830-0f11f8beb09e.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118845879-5d32ad80-b8f6-11eb-883d-f5539a082508.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118845943-69b70600-b8f6-11eb-9ed6-3784abc4dda3.png)
+
+- Transition dapat berubah karena perubahan Parameter yang mempengaruhi Condition. Oleh karena itu kita perlu melakukan modifikasi pada code PlayerController dan menambahkan perubahan paramter. Berikut adalah code PlayerController yang telah dimodifikasi.
 
 ```cs
 using System.Collections;
