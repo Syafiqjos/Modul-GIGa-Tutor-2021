@@ -534,7 +534,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118565577-a2db6300-b79c-11eb-9028-bfb92b4120b2.png)
 
-- `Instantiate` berfungsi untuk (belumIDK).
+- `Instantiate` berfungsi untuk melakukan spawn game object. Biasanya Instantiate dilakukan untuk melakukan spawn prefab pada posisi tertentu.
  
 - `Quaternion` berfungsi untuk representasi rotasi dalam script. Jadi kita bisa mendapatkan informasi bagaimana posisi rotasi object dengan memanggil fungsi `Quarterion`.
 
@@ -1116,7 +1116,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
 
-- Menjelaskan Background Camera / Clear Flags, ganti menjadi Solid Color (belumIDK)
+- Pada Camera terdapat property Clear Flags. `Clear Flags` merupakan suatu fitur agar camera melakukan render pada background dengan cara yang diberikan. Misalnya pada Skybox, camera akan melakukan render Skybox pada bagian camera yang tidak merender game object, atau pada Solid Color sehingga camera memberkian warna solid pada bagian camera yang tidak merender game object.
 
 ![image](https://user-images.githubusercontent.com/16128257/118585791-cd8ce200-b7c3-11eb-9e28-eb11bd8ebd88.png)
 
@@ -1124,7 +1124,7 @@ public class PlayerController : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118585875-f0b79180-b7c3-11eb-8389-1b705ff5af3b.png)
 
-- Membuat code camera follow
+- Selanjutnya adalah membuat suatu script agar Main Camera dapat mengikuti pergerakan Player.
 
 - Buat Script baru di folder Scripts dengan nama CameraFollow
 
@@ -1164,8 +1164,9 @@ public class CameraFollow : MonoBehaviour
 }
 ```
 
-- Menjelaskan Attribute Range (belumIDK).
-- Menjelaskan Lerp (belumIDK).
+- `Attribute Range` merupakan salah satu attribute yang dapat mengubah field menjadi Range dari suatu variable. Contohnya adalah menggunakan Range dari 0 sampai 1 sehingga nilai variable tersebut dapat diatur dari inspector dari 0 hingga 1.
+
+- `Lerp` atau `Linear Interpolation` merupakan satu metode yang digunakan untuk melakukan specify nilai tertentu. Misal terdapat suatu nilai dari 0 hingga 100, dengan menggunakan Lerp dan ratio 0.5 maka nilai tersebut akan bernilai 50.
 
 - Tambahkan component script CameraFollow pada Game Object Main Camera
 
@@ -1181,8 +1182,10 @@ public class CameraFollow : MonoBehaviour
 - `ActiveScene` adalah Scene yang sedang running/active saat game berjalan.
 - `LoadScene` berfungsi untuk memuat scene yang akan diakses selanjutnya/berpindah ke scene yang dipilih.
 - `buildIndex`: Setiap Scene pasti mempunyai index nya sendiri (diatur saat akan build game). Sehingga jika ingin memanggil suatu Scene tinggal memanggil index dari scene tersebut. Contoh :```SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);``` berarti kita mengakses Scene yang index nya lebih 1 dari Active Scene yang sedang berjalan.
-- Menjelaskan Singleton (belumIDK)
-- Membuat Code GameManager
+
+- Kita akan mengamalkan `Singleton Pattern` pada GameManager. `Singleton Pattern` merupakan suatu metode menyimpan Instance dari class tersebut pada suatu static property pada class itu sendiri. Hal ini digunakan untuk menghindar dari referensi object yang berlebihan atau tidak cocok untuk direferensikan.
+
+- Berikut adalah code untuk Script GameManager.
 
 ```cs
 using System.Collections;
@@ -1242,8 +1245,9 @@ public class GameManager : MonoBehaviour
 ```
 
 ### Membuat ScoreManager
-- Menjelaskan Singleton (belumIDK)
-- Membuat Code ScoreManager
+- Sama seperti GameManager, ScoreManager juga akan mengamalkan Singleton Pattern.
+
+- Berikut merupakan code untuk Script ScoreManager.
 
 ```cs
 using UnityEngine;
