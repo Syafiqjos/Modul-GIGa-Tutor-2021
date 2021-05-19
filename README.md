@@ -1563,6 +1563,30 @@ public class UIManager : MonoBehaviour
 
 ![image](https://user-images.githubusercontent.com/16128257/118835595-59e6f400-b8ed-11eb-88fb-540c104d8071.png)
 
+- Untuk masing - masing Animation Clip Player kita tambahkan animasi di dalamnya. Sebagai contoh berikut adalah PlayerIdle. Double click PlayerIdle untuk memunculkan Animation Window.
+
+![image](https://user-images.githubusercontent.com/16128257/118841900-ec3dc680-b8f2-11eb-87ed-651bc1f9416d.png)
+
+- Tambahkan Property dengan Add Property lalu pilih Graphic/SpriteRenderer/Sprite.
+
+![image](https://user-images.githubusercontent.com/16128257/118841673-b6004700-b8f2-11eb-9d0d-4daddf84f097.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118841762-c87a8080-b8f2-11eb-9ad3-8ceed0636471.png)
+
+- Pada Project Window masuk ke folder Sprites/Player dan pilih semua sprite player_idle lalu drag and drop ke Animation Window pada Graphic/SpriteRenderer/Sprite tadi.
+
+![image](https://user-images.githubusercontent.com/16128257/118842219-345ce900-b8f3-11eb-8097-27f8e765dee0.png)
+
+- Ubah Samples Rate menjadi 10 dan sesuaikan time-nya dengan gambar diatas.
+
+- Lakukan hal yang sama pada PlayerJumpUp, PlayerJumpDown dan PlayerRun.
+
+![image](https://user-images.githubusercontent.com/16128257/118842572-89006400-b8f3-11eb-92f2-ea550d7c05de.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118842633-96b5e980-b8f3-11eb-9c4c-5b9dde32edcb.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118842730-a6cdc900-b8f3-11eb-9168-718decd6c498.png)
+
 - Untuk berpindah `Transition` diperlukan parameter yang dapat mengatur jalannya animasi. Misal dari Idle ke Run hanya dapat dilakukan ketika parameter IsRunning bernilai true.
 
 - Pada PlayerAnimator, tambahkan parameter bertipe boolean dan beri nama isGrounded. Lalu parameter velocityX dan velocityY yang bertipe integer.
