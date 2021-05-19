@@ -1,4 +1,7 @@
-# GiGa Tutor 2021
+# GIGa Tutor 2021
+
+![image](https://user-images.githubusercontent.com/16128257/118846766-3de85000-b8f7-11eb-81f2-5523d6d1850b.png)
+
 ## Shooting-Platformer 2D Unity Tutorial
 
 ![Gameplay-Overview](Images/Gameplay-Overview.gif)
@@ -10,6 +13,7 @@ Dalam Unity, dikenal namanya "Unity Project". Unity project secara umunya dibeda
 
 Contoh Tampilan Project Unity 3D dan 2D:
 ![Unity 3D Preview](Images/Unity3D-Preview.jpg)
+
 ![Unity 2D Preview](Images/Unity2D-preview.jpg)
 
 ## B. Download Assets
@@ -1855,8 +1859,13 @@ public class PlayerController : MonoBehaviour
 
 - Coba Play Game dan amati animasi baru pada Enemy Mushroom.
 
-## N. Penutup
-Terima Kasih telah ditutup.
+## Penutup
+Terima Kasih telah mengikuti GIGa Tutor 2021. Jangan lupa untuk registrasi dan datang pada Event GIGa Talk 2021 pada tanggal 23 Mei 2021! Banyak tema dan tips menarik yang akan dibahas!
 
-## O. Terima Kasih
-sip
+![image](https://user-images.githubusercontent.com/16128257/118846918-6708e080-b8f7-11eb-9b16-f11237257dd3.png)
+
+![image](https://user-images.githubusercontent.com/16128257/118847372-de3e7480-b8f7-11eb-9862-eea6b627c8d0.png)
+
+Registration : [http://bit.ly/RegistGIGaTalk2021](http://bit.ly/RegistGIGaTalk2021)
+
+## Terima Kasih !!
