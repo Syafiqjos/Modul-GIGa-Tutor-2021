@@ -12,10 +12,13 @@ Unity adalah cross-platform game engine dimana Unity adalah berfungsi sebagai ap
 Dalam Unity, dikenal namanya "Unity Project". Unity project secara umunya dibedakan menjadi 2 yaitu Project 3D dan 2D. Dalam modul ini kita akan lebih lanjut membahas membuat game dalam Unity Project 2D.
 
 Contoh Tampilan Project Unity 3D dan 2D:
+
 ![Unity 3D Preview](Images/Unity3D-Preview.jpg)
+
 Sumber: (https://www.iamag.co/)
 
 ![Unity 2D Preview](Images/Unity2D-preview.jpg)
+
 Sumber: (https://www.unity.com/)
 
 ## B. Download Assets
