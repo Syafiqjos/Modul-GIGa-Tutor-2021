@@ -583,7 +583,7 @@ public class PlayerController : MonoBehaviour
 
 - `Tag` adalah representasi Object dalam bentuk "kata" yang dapat dikustomisasi. Misal dalam satu scene kita mempunyai 2 Objek Balok yang sama. Tag dapat membedakan GameObject yang sama tersebut jika memiliki purpose yang berbeda-beda. Tag sangat penting untuk mengindentifikasi object game didalam script. 
 
-- Tag dari tiap object pasti diset default. Oleh karena itu player yang sudah kita buat sudah diset default.
+- Tag dari tiap object pasti layernya diset default. Oleh karena itu player yang sudah kita buat layernya sudah diset ke default.
 
 - Buat Script baru dan beri nama EnemyController.
 
