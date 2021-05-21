@@ -536,9 +536,9 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-- Assign prefab Bullet pada component PlayerController.
+- Assign prefab Bullet pada component PlayerController. Ubah property **Gun Offset** menjadi (0.75, -0.5)
 
-![image](https://user-images.githubusercontent.com/16128257/118565577-a2db6300-b79c-11eb-9028-bfb92b4120b2.png)
+![image](https://user-images.githubusercontent.com/16128257/119168835-89cbfe00-ba8b-11eb-8b3e-44e274e85bfc.png)
 
 - `Instantiate` berfungsi untuk melakukan spawn game object. Biasanya Instantiate dilakukan untuk melakukan spawn prefab pada posisi tertentu.
  
