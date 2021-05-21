@@ -831,8 +831,6 @@ public class PlayerController : MonoBehaviour
             JumpController();
             ShootController();
         }
-
-        FallDie();
     }
 
     void MovementController()
@@ -848,7 +846,8 @@ public class PlayerController : MonoBehaviour
         if (direction.x < 0)
         {
             graphic.flipX = true;
-        } else if (direction.x > 0)
+        }
+        else if (direction.x > 0)
         {
             graphic.flipX = false;
         }
@@ -856,12 +855,13 @@ public class PlayerController : MonoBehaviour
 
     void JumpController()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, (1 << 3));
-        
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, LayerMask.GetMask("Obstacle"));
+
         if (ray && ray.distance < minGroundDistance)
         {
             isGrounded = true;
-        } else
+        }
+        else
         {
             isGrounded = false;
         }
@@ -887,7 +887,8 @@ public class PlayerController : MonoBehaviour
         if (isShooting)
         {
             shootingTime -= Time.deltaTime;
-        } else
+        }
+        else
         {
             shootingTime = shootingTimeMax;
         }
@@ -910,7 +911,7 @@ public class PlayerController : MonoBehaviour
 
         if (bullet)
         {
-            bullet.Launch(new Vector2(direction, 0),"Enemy", bulletSpeed, attack);
+            bullet.Launch(new Vector2(direction, 0), "Enemy", bulletSpeed, attack);
         }
     }
 }
@@ -1013,7 +1014,7 @@ public class PlayerController : MonoBehaviour
 
     void JumpController()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, (1 << 3));
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, LayerMask.GetMask("Obstacle"));
         
         if (ray && ray.distance < minGroundDistance)
         {
@@ -1718,7 +1719,7 @@ public class PlayerController : MonoBehaviour
 
     void JumpController()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, (1 << 3));
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 10, LayerMask.GetMask("Obstacle"));
         
         if (ray && ray.distance < minGroundDistance)
         {
