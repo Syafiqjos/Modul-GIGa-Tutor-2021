@@ -1958,14 +1958,14 @@ public class PlayerController : MonoBehaviour
 
 - Coba Play Game dan amati animasi baru pada Enemy Mushroom.
 
+![Gameplay-Overview](Images/Gameplay-Overview.gif)
+
 ## Penutup
-Terima Kasih telah mengikuti GIGa Tutor 2021. Jangan lupa untuk registrasi dan datang pada Event GIGa Talk 2021 pada tanggal 23 Mei 2021! Banyak tema dan tips menarik yang akan dibahas!
+Terima Kasih telah mengikuti GIGa Tutor 2021. Jangan lupa untuk datang pada Event GIGa Talk 2021 pada tanggal 23 Mei 2021! Banyak tema dan tips menarik yang akan dibahas!
 
 ![image](https://user-images.githubusercontent.com/16128257/118846918-6708e080-b8f7-11eb-9b16-f11237257dd3.png)
 
 ![image](https://user-images.githubusercontent.com/16128257/118847372-de3e7480-b8f7-11eb-9862-eea6b627c8d0.png)
-
-Registration : [http://bit.ly/RegistGIGaTalk2021](http://bit.ly/RegistGIGaTalk2021)
 
 ## Terima Kasih !!
 Kami nantikan kedatanganmu di GIGa Talk 👊😎
