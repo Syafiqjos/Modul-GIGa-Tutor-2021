@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = true;
     private bool isShooting = true;
-    private int velocityX = 0;
-    private int velocityY = 0;
 
     [Header("Configuration")]
     [SerializeField] private float moveSpeed = 2.5f;
@@ -36,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minGroundDistance = 1.5f;
 
     private Rigidbody2D rb2;
-    private Animator animator;
 
     void Awake()
     {
@@ -46,7 +43,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
 
         shootingTime = shootingTimeMax;
         healthMax = health;
@@ -58,9 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             MovementController();
             JumpController();
-            ShootController();
-
-            AnimationController();
+            ShootController();            
         }
 
         FallDie();
@@ -168,16 +162,6 @@ public class PlayerController : MonoBehaviour
         graphic.enabled = false;
         canBeMoved = false;
         GameManager.GameOver();
-    }
-
-    void AnimationController()
-    {
-        velocityX = (int)Mathf.Clamp(rb2.velocity.x, -1, 1);
-        velocityY = (int)Mathf.Clamp(rb2.velocity.y, -1, 1);
-
-        animator.SetBool("isGrounded", isGrounded);
-        animator.SetInteger("velocityX", velocityX);
-        animator.SetInteger("velocityY", velocityY);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

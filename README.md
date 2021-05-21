@@ -35,6 +35,8 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 - Menjelaskan Scene View
 - Menjelaskan Project
 - Menjelaskan Scene
+- Menjelaskan navigasi scene view
+
 ### Game View
 
 ![LayoutUnity-GameView](/Images/LayoutUnity-GameView.png)
@@ -45,6 +47,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 ![LayoutUnity-ProjectWindow](/Images/LayoutUnity-ProjectWindow.png)
 
 - Menjelaskan Project Window
+- Menjelaskan klik kanan
 ### Hierarchy
 
 ![LayoutUnity-Hierarchy](/Images/LayoutUnity-Hierarchy.png)
@@ -175,9 +178,17 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 - Menjelaskan tentang sprite order
 
 ### Menambahkan Physics
+
 - Menjelaskan physics2D
+
 - Pada player menambahkan RigidBody2D
+
+![IntroductionGameObject-AddPhysicsPlayerComponent](/Images/IntroductionGameObject-AddPhysicsPlayerComponent.png)
+
 - Pada player menambahkan Capsule Collider2D
+
+![IntroductionGameObject-AddPhysicsPlayerComponentCollider](/Images/IntroductionGameObject-AddPhysicsPlayerComponentCollider.png)
+
 - Pada environment menambahkan Box Collider2D pada tanah
 
 ### Membuat Prefab untuk Player
