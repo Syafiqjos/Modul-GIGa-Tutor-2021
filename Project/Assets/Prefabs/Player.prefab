@@ -106,7 +106,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -158,7 +158,7 @@ Animator:
   m_GameObject: {fileID: 4739586054181939029}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f613a3f988ebf7945b8cf1bda97c4eaa, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c6ed839f9abca54dbfe4393177c4d8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -201,8 +201,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: -0.61323833}
+  m_Size: {x: 0.5, y: 0.77352333}
   m_Direction: 0
 --- !u!114 &4739586054211886288
 MonoBehaviour:
@@ -219,9 +219,9 @@ MonoBehaviour:
   graphic: {fileID: 4739586053566366086}
   health: 100
   attack: 5
+  canBeMoved: 1
   moveSpeed: 2.5
   jumpForce: 5
-  dashDistance: 2
   shootingTimeMax: 1
   bulletPrefab: {fileID: 8422250167837164933, guid: 74047848e576bff4087a9b95931f4b8e, type: 3}
   bulletSpeed: 10
