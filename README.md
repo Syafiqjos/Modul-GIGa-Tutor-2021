@@ -1469,11 +1469,88 @@ public class UIManager : MonoBehaviour
 
 - Elemen UI yang berupa text dapat diubah melalui script/code. contoh nya adalah script berikut: `enemyProgressText.text = ScoreManager.currentEnemyProgress + " of " + ScoreManager.targetEnemyProgress;`. Nantinya UI Text yang ingin diubah akan diattach ke Component script yang sudah terpasang di GameMaster.
 
-- Menggabungkan dengan GameManager dan ScoreManager
+- Pada `EnemyController` panggil method `DefeatEnemy()` pada `ScoreManager` agar progress dapat bertambah ketika Enemy menjalankan method `Die()`.
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
+{
+    [Header("Status")]
+    public float health = 20;
+    public float attack = 5;
+
+    public Transform attackTarget;
+
+    [Header("Configuration")]
+    [SerializeField] private float moveSpeed = 2.5f;
+
+    void Update()
+    {
+        Movement();
+
+        FallDie();
+    }
+
+    protected virtual void Movement()
+    {
+
+    }
+
+    public void DamagedBy(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
+    void FallDie()
+    {
+        if (transform.position.y < -20)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+        ScoreManager.DefeatEnemy();
+    }
+
+    public float GetAttackDamage()
+    {
+        return attack;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
+        {
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet.targetTag == "Enemy")
+            {
+                float damage = bullet.GetDamage();
+                DamagedBy(damage);
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+}
+```
 
 - Kemudian tambahkan component UIManager pada GameObject GameMaster. Isi konfigurasi UI seperti berikut ini.
 
 ![image](https://user-images.githubusercontent.com/16128257/118589417-8bb36a00-b7ca-11eb-8cf0-71fff3bfb3d6.png)
+
+- Coba mainkan dan kalahkan semua enemy!
+
+![image](https://user-images.githubusercontent.com/16128257/119175145-ad934200-ba93-11eb-8f95-857e21a105f6.png)
 
 ## J. Membuat Scene Baru Agar Game Lebih Menyenangkan
 ### Pengenalan pada Build Settings
