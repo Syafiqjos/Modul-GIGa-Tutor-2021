@@ -931,6 +931,186 @@ public class PlayerController : MonoBehaviour
 
 - ICE BREAKING : Coba edit **Jump Force** menjadi 20 untuk lompatan super atau ganti **Min Ground Distance** menjadi 5 agar bisa jump on air.
 
+### Membuat Camera Follow
+- `Camera` berfungsi sebagai object yang digunakan user/pemain untuk melihat world dari game yang sudah dibuat. Tampilan pada `GameView` akan mengikuti arah view camera yang telah diatur.
+
+![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
+
+- Pada Camera terdapat property Clear Flags. `Clear Flags` merupakan suatu fitur agar camera melakukan render pada background dengan cara yang diberikan. Misalnya pada Skybox, camera akan melakukan render Skybox pada bagian camera yang tidak merender game object, atau pada Solid Color sehingga camera memberkian warna solid pada bagian camera yang tidak merender game object.
+
+![image](https://user-images.githubusercontent.com/16128257/118585791-cd8ce200-b7c3-11eb-9e28-eb11bd8ebd88.png)
+
+- Mengubah warna Background Camera, coba ubah warna background camera menjadi #03071C
+
+![image](https://user-images.githubusercontent.com/16128257/118585875-f0b79180-b7c3-11eb-8389-1b705ff5af3b.png)
+
+- Selanjutnya adalah membuat suatu script agar Main Camera dapat mengikuti pergerakan Player.
+
+- Buat Script baru di folder Scripts dengan nama CameraFollow
+
+![image](https://user-images.githubusercontent.com/16128257/118585939-0dec6000-b7c4-11eb-94c3-cc605504a908.png)
+
+- Berikut adalah kode script untuk CameraFollow
+
+```cs
+using UnityEngine;
+using System.Collections;
+
+public class CameraFollow : MonoBehaviour
+{
+    public bool isFollowing = true;
+    public Transform target;
+
+    private Vector3 targetPos;
+    public Vector3 targetOffset;
+
+    [Range(0, 1.0f)] public float followRatio = 1.0f;
+
+    void Update()
+    {
+        if (target)
+        {
+            if (isFollowing)
+            {
+                targetPos = target.position + targetOffset;
+            }
+
+            Vector3 newPos = Vector3.Lerp(transform.position, targetPos, followRatio);
+            newPos.z = transform.position.z;
+
+            transform.position = newPos;
+        }
+    }
+}
+```
+
+- `Attribute Range` merupakan salah satu attribute yang dapat mengubah field menjadi Range dari suatu variable. Contohnya adalah menggunakan Range dari 0 sampai 1 sehingga nilai variable tersebut dapat diatur dari inspector dari 0 hingga 1.
+
+- `Lerp` atau `Linear Interpolation` merupakan satu metode yang digunakan untuk melakukan specify nilai tertentu. Misal terdapat suatu nilai dari 0 hingga 100, dengan menggunakan Lerp dan ratio 0.5 maka nilai tersebut akan bernilai 50.
+
+- Tambahkan component script CameraFollow pada Game Object Main Camera
+
+![image](https://user-images.githubusercontent.com/16128257/118586123-5f94ea80-b7c4-11eb-9f95-8b38579ca3fd.png)
+
+- Assign Player pada field Target dan isi field yang lain sesuai kebutuhan
+
+![image](https://user-images.githubusercontent.com/16128257/118586192-7c312280-b7c4-11eb-9940-6ce22bd77f53.png)
+
+## H. Membuat GameMaster yang mengontrol sebagian besar Game
+### Membuat GameManager
+- `SceneManagement` adalah salah satu library/module dalam script Unity yang berisi berbagai fungsi untuk *manage* para scenes yang sudah kita buat di unity. Bagaimana kita mengatur perpindahan dari scene A ke scene B, misal dari scene Main menu ke Scene Level 1 atau sebaliknya dan berbagai fungsi lain. 
+- `ActiveScene` adalah Scene yang sedang running/active saat game berjalan.
+- `LoadScene` berfungsi untuk memuat scene yang akan diakses selanjutnya/berpindah ke scene yang dipilih.
+- `buildIndex`: Setiap Scene pasti mempunyai index nya sendiri (diatur saat akan build game). Sehingga jika ingin memanggil suatu Scene tinggal memanggil index dari scene tersebut. Contoh :```SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);``` berarti kita mengakses Scene yang index nya lebih 1 dari Active Scene yang sedang berjalan.
+
+- Kita akan mengamalkan `Singleton Pattern` pada GameManager. `Singleton Pattern` merupakan suatu metode menyimpan Instance dari class tersebut pada suatu static property pada class itu sendiri. Hal ini digunakan untuk menghindar dari referensi object yang berlebihan atau tidak cocok untuk direferensikan.
+
+- Berikut adalah code untuk Script GameManager.
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public static bool isGameOver { get; private set; }
+    public static bool isLevelComplete { get; private set; }
+
+    private void Awake()
+    {
+        isGameOver = false;
+        isLevelComplete = false;
+    }
+
+    private void Update()
+    {
+        if (isLevelComplete)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                NextLevel();
+            }
+        }
+        else if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            { 
+                RetryGame();
+            }
+        }
+    }
+
+    public static void GameOver()
+    {
+        isGameOver = true;
+    }
+
+    public static void CompleteLevel()
+    {
+        isLevelComplete = true;
+    }
+
+    public static void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public static void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+}
+```
+
+### Membuat ScoreManager
+- Sama seperti GameManager, ScoreManager juga akan mengamalkan Singleton Pattern.
+
+- Berikut merupakan code untuk Script ScoreManager.
+
+```cs
+using UnityEngine;
+using System.Collections;
+
+public class ScoreManager : MonoBehaviour
+{
+    public static ScoreManager Instance { get; private set; }
+
+    public static int currentEnemyProgress { get; private set; }
+    public static int targetEnemyProgress { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        EnemyController[] enemyControllers = FindObjectsOfType<EnemyController>();
+
+        targetEnemyProgress = enemyControllers.Length;
+        currentEnemyProgress = 0;
+    }
+
+    public static void DefeatEnemy()
+    {
+        currentEnemyProgress += 1;
+
+        if (currentEnemyProgress >= targetEnemyProgress)
+        {
+            GameManager.CompleteLevel();
+        }
+    }
+}
+```
+
+### Membuat Game Master
+
+- Buat GameObject Empty baru, lalu tambahkan component GameManager dan ScoreManager
+
+![image](https://user-images.githubusercontent.com/16128257/118587202-645a9e00-b7c6-11eb-978f-8b2327245104.png)
+
 ### Membuat Fitur Player mati
 - Setiap kali player terkena bullet dari Enemy atau player menyentuh Enemy atau ketika player jatuh, kita dapat menambahkan fitur agar Player bisa mati sehingga level akan di restart. Untuk itu modifikasi PlayerController sebagai berikut.
 
@@ -1125,186 +1305,6 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
-
-### Membuat Camera Follow
-- `Camera` berfungsi sebagai object yang digunakan user/pemain untuk melihat world dari game yang sudah dibuat. Tampilan pada `GameView` akan mengikuti arah view camera yang telah diatur.
-
-![image](https://user-images.githubusercontent.com/16128257/118585720-aa623280-b7c3-11eb-915c-a89b8b20af56.png)
-
-- Pada Camera terdapat property Clear Flags. `Clear Flags` merupakan suatu fitur agar camera melakukan render pada background dengan cara yang diberikan. Misalnya pada Skybox, camera akan melakukan render Skybox pada bagian camera yang tidak merender game object, atau pada Solid Color sehingga camera memberkian warna solid pada bagian camera yang tidak merender game object.
-
-![image](https://user-images.githubusercontent.com/16128257/118585791-cd8ce200-b7c3-11eb-9e28-eb11bd8ebd88.png)
-
-- Mengubah warna Background Camera, coba ubah warna background camera menjadi #03071C
-
-![image](https://user-images.githubusercontent.com/16128257/118585875-f0b79180-b7c3-11eb-8389-1b705ff5af3b.png)
-
-- Selanjutnya adalah membuat suatu script agar Main Camera dapat mengikuti pergerakan Player.
-
-- Buat Script baru di folder Scripts dengan nama CameraFollow
-
-![image](https://user-images.githubusercontent.com/16128257/118585939-0dec6000-b7c4-11eb-94c3-cc605504a908.png)
-
-- Berikut adalah kode script untuk CameraFollow
-
-```cs
-using UnityEngine;
-using System.Collections;
-
-public class CameraFollow : MonoBehaviour
-{
-    public bool isFollowing = true;
-    public Transform target;
-
-    private Vector3 targetPos;
-    public Vector3 targetOffset;
-
-    [Range(0, 1.0f)] public float followRatio = 1.0f;
-
-    void Update()
-    {
-        if (target)
-        {
-            if (isFollowing)
-            {
-                targetPos = target.position + targetOffset;
-            }
-
-            Vector3 newPos = Vector3.Lerp(transform.position, targetPos, followRatio);
-            newPos.z = transform.position.z;
-
-            transform.position = newPos;
-        }
-    }
-}
-```
-
-- `Attribute Range` merupakan salah satu attribute yang dapat mengubah field menjadi Range dari suatu variable. Contohnya adalah menggunakan Range dari 0 sampai 1 sehingga nilai variable tersebut dapat diatur dari inspector dari 0 hingga 1.
-
-- `Lerp` atau `Linear Interpolation` merupakan satu metode yang digunakan untuk melakukan specify nilai tertentu. Misal terdapat suatu nilai dari 0 hingga 100, dengan menggunakan Lerp dan ratio 0.5 maka nilai tersebut akan bernilai 50.
-
-- Tambahkan component script CameraFollow pada Game Object Main Camera
-
-![image](https://user-images.githubusercontent.com/16128257/118586123-5f94ea80-b7c4-11eb-9f95-8b38579ca3fd.png)
-
-- Assign Player pada field Target dan isi field yang lain sesuai kebutuhan
-
-![image](https://user-images.githubusercontent.com/16128257/118586192-7c312280-b7c4-11eb-9940-6ce22bd77f53.png)
-
-## H. Membuat GameMaster yang mengontrol sebagian besar Game
-### Membuat GameManager
-- `SceneManagement` adalah salah satu library/module dalam script Unity yang berisi berbagai fungsi untuk *manage* para scenes yang sudah kita buat di unity. Bagaimana kita mengatur perpindahan dari scene A ke scene B, misal dari scene Main menu ke Scene Level 1 atau sebaliknya dan berbagai fungsi lain. 
-- `ActiveScene` adalah Scene yang sedang running/active saat game berjalan.
-- `LoadScene` berfungsi untuk memuat scene yang akan diakses selanjutnya/berpindah ke scene yang dipilih.
-- `buildIndex`: Setiap Scene pasti mempunyai index nya sendiri (diatur saat akan build game). Sehingga jika ingin memanggil suatu Scene tinggal memanggil index dari scene tersebut. Contoh :```SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);``` berarti kita mengakses Scene yang index nya lebih 1 dari Active Scene yang sedang berjalan.
-
-- Kita akan mengamalkan `Singleton Pattern` pada GameManager. `Singleton Pattern` merupakan suatu metode menyimpan Instance dari class tersebut pada suatu static property pada class itu sendiri. Hal ini digunakan untuk menghindar dari referensi object yang berlebihan atau tidak cocok untuk direferensikan.
-
-- Berikut adalah code untuk Script GameManager.
-
-```cs
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public class GameManager : MonoBehaviour
-{
-    public static bool isGameOver { get; private set; }
-    public static bool isLevelComplete { get; private set; }
-
-    private void Awake()
-    {
-        isGameOver = false;
-        isLevelComplete = false;
-    }
-
-    private void Update()
-    {
-        if (isLevelComplete)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                NextLevel();
-            }
-        }
-        else if (isGameOver)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            { 
-                RetryGame();
-            }
-        }
-    }
-
-    public static void GameOver()
-    {
-        isGameOver = true;
-    }
-
-    public static void CompleteLevel()
-    {
-        isLevelComplete = true;
-    }
-
-    public static void NextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public static void RetryGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-}
-```
-
-### Membuat ScoreManager
-- Sama seperti GameManager, ScoreManager juga akan mengamalkan Singleton Pattern.
-
-- Berikut merupakan code untuk Script ScoreManager.
-
-```cs
-using UnityEngine;
-using System.Collections;
-
-public class ScoreManager : MonoBehaviour
-{
-    public static ScoreManager Instance { get; private set; }
-
-    public static int currentEnemyProgress { get; private set; }
-    public static int targetEnemyProgress { get; private set; }
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
-    private void Start()
-    {
-        EnemyController[] enemyControllers = FindObjectsOfType<EnemyController>();
-
-        targetEnemyProgress = enemyControllers.Length;
-        currentEnemyProgress = 0;
-    }
-
-    public static void DefeatEnemy()
-    {
-        currentEnemyProgress += 1;
-
-        if (currentEnemyProgress >= targetEnemyProgress)
-        {
-            GameManager.CompleteLevel();
-        }
-    }
-}
-```
-
-### Membuat Game Master
-
-- Buat GameObject Empty baru, lalu tambahkan component GameManager dan ScoreManager
-
-![image](https://user-images.githubusercontent.com/16128257/118587202-645a9e00-b7c6-11eb-978f-8b2327245104.png)
 
 ## I. Membuat UI untuk memperindah Game
 ### Membuat UI
