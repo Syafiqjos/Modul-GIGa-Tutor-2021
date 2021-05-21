@@ -1,4 +1,4 @@
-# GIGa Tutor 2021
+# Modul GIGa Tutor 2021
 
 ![image](https://user-images.githubusercontent.com/16128257/118846766-3de85000-b8f7-11eb-81f2-5523d6d1850b.png)
 
