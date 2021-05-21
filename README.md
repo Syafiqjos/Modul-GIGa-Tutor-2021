@@ -927,6 +927,10 @@ public class PlayerController : MonoBehaviour
 
 - Coba Play Test lalu tekan Up Arrow untuk loncat dengan Player.
 
+![image](https://user-images.githubusercontent.com/16128257/119171595-fbf21200-ba8e-11eb-99b1-251611818706.png)
+
+- ICE BREAKING : Coba edit **Jump Force** menjadi 20 untuk lompatan super atau ganti **Min Ground Distance** menjadi 5 agar bisa jump on air.
+
 ### Membuat Fitur Player mati
 - Setiap kali player terkena bullet dari Enemy atau player menyentuh Enemy atau ketika player jatuh, kita dapat menambahkan fitur agar Player bisa mati sehingga level akan di restart. Untuk itu modifikasi PlayerController sebagai berikut.
 
