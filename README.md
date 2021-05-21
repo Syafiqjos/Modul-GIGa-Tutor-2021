@@ -44,17 +44,9 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![LayoutUnity-SceneView](Images/LayoutUnity-SceneView.png)
 
-<<<<<<< HEAD
-- Menjelaskan Scene View
-- Menjelaskan Project
-- Menjelaskan Scene
-- Menjelaskan navigasi scene view
-
-=======
 - `Sceneview` adalah tempat dimana kita berinteraksi dengan *world* yang telah kita buat. Di dalam Sceneview kita dapat select, memanipulasi, menggerakkan (dan lain sebagainya) Camera, Lighting, dan GameObject lain yang berada di dalam Scene tersebut.    
 
 - Didalam satu project game Unity bisa terdapat beberapa `Scene`. Biasanya jika dalam project game tersebut terdapat sistem Tahapan Level maka 1 level tersebut direpesentasikan dengan 1 Scene. Jika kita ingin membuat Level baru dengan environment dan object yang mungkin berbeda, maka kita akan membuat scene baru. Scene baru juga bisa dibuat untuk membuat main menu, Score Detail Scene dan lain sebagainya. 
->>>>>>> 14912406523ac20f3610f86925d7c4b46edf26a3
 ### Game View
 
 ![LayoutUnity-GameView](Images/LayoutUnity-GameView.png)
@@ -66,12 +58,7 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ![LayoutUnity-ProjectWindow](Images/LayoutUnity-ProjectWindow.png)
 
-<<<<<<< HEAD
-- Menjelaskan Project Window
-- Menjelaskan klik kanan
-=======
 - `Project Window` adalah window yang menampilkan semua files yang berhubungan dengan project kita. Project Window juga berfungsi untuk navigate dan mengatur/manage asset dan project files dalam suatu project. Semacam File Explorer dalam Windows, kita dapat membuat folder dalam Project Window agar para files bisa tersusun secara rapi (Semua Files yang berada di Project juga bisa diakses/dilihat dari File Explorer Windows).
->>>>>>> 14912406523ac20f3610f86925d7c4b46edf26a3
 ### Hierarchy
 
 ![LayoutUnity-Hierarchy](Images/LayoutUnity-Hierarchy.png)
@@ -205,19 +192,6 @@ Assets Sprite untuk modul ini dapat di download di [Unlucid Adopted Assets](http
 
 ### Menambahkan Physics
 
-<<<<<<< HEAD
-- Menjelaskan physics2D
-
-- Pada player menambahkan RigidBody2D
-
-![IntroductionGameObject-AddPhysicsPlayerComponent](/Images/IntroductionGameObject-AddPhysicsPlayerComponent.png)
-
-- Pada player menambahkan Capsule Collider2D
-
-![IntroductionGameObject-AddPhysicsPlayerComponentCollider](/Images/IntroductionGameObject-AddPhysicsPlayerComponentCollider.png)
-
-- Pada environment menambahkan Box Collider2D pada tanah
-=======
 - `Physics 2D` adalah bagaimana mekanis fisika di game kita bekerja (dalam kasus ini fisika 2 dimensi nya bagaimana). Physiscs di Unity bisa meliputi `Gravity`,`Velocity`,`Speed Rotation` dan banyak lagi lainnya yang bisa kita atur melalui Global Setting untuk Physics 2D.
 ![Physics 2D View](Images/Physics2D_properties.png)
 Sumber: (www.unity.com)
@@ -245,7 +219,6 @@ Sumber: (www.unity.com)
 ![image](https://user-images.githubusercontent.com/16128257/118537926-bd4f1580-b777-11eb-8eed-7cb18829670d.png)
 
 ![image](https://user-images.githubusercontent.com/16128257/118537687-77924d00-b777-11eb-920d-634632d7b66c.png)
->>>>>>> 14912406523ac20f3610f86925d7c4b46edf26a3
 
 ### Membuat Prefab untuk Player
 - Dalam suatu Project di Unity kita bisa menggunakan suatu object dalam beberapa Scene (Karena biasanya setiap Scene memiliki object yang berbeda-beda antara 1 Scene dengan Scene yang lain). Jadi jika kita ingin menggunakan object tidak hanya di dalam satu Scene saja, kita dapat membuat object tersebut menjadi `Prefab`.
