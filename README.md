@@ -750,11 +750,15 @@ public class EnemyMushroom : EnemyController
 
 ![image](https://user-images.githubusercontent.com/16128257/118567930-eb951b00-b7a0-11eb-92c1-5f2a1c9f72d7.png)
 
-- Assign bullet pada component EnemyMushroom sebelumnya dengan EnemyBullet.
+- Pada BulletEnemy ubah TargetTag menjadi "Player". Ini akan membuat bullet hanya dapat mengenai collider gameobject yang memiliki tag "Player". Seperti halnya bullet milik player hanya dapat mengenai collider gameobject yang memiliki tag "Enemy". Property TargetTag ini akan digunakan pada script - script yang akan datang.
+
+![image](https://user-images.githubusercontent.com/16128257/119170183-175c1d80-ba8d-11eb-8998-fc355e4df919.png)
+
+- Assign bullet pada component EnemyMushroom sebelumnya dengan EnemyBullet. Atur konfigurasinya pada inspector seperti berikut.
 
 ![image](https://user-images.githubusercontent.com/16128257/118568030-21d29a80-b7a1-11eb-90ab-40ce8766bf6c.png)
 
-- Membuat Prefab untuk Enemy Mushroom
+- Membuat Prefab untuk Enemy Mushroom.
 
 ![image](https://user-images.githubusercontent.com/16128257/118568139-63634580-b7a1-11eb-9708-84debc997102.png)
 
