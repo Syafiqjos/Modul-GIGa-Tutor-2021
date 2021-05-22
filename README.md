@@ -1969,3 +1969,14 @@ Terima Kasih telah mengikuti GIGa Tutor 2021. Jangan lupa untuk datang pada Even
 
 ## Terima Kasih !!
 Kami nantikan kedatanganmu di GIGa Talk 👊😎
+
+## Referensi Belajar GameDev Lebih Lanjut
+http://notepad.pw/linkYoutubeGIGaTalk
+
+- [Mix and Jam](https://www.youtube.com/channel/UCLyVUwlB_Hahir_VsKkGPIA)
+- [Brackeys](https://www.youtube.com/user/Brackeys)
+- [Game Dev Guide](https://www.youtube.com/channel/UCR35rzd4LLomtQout93gi0w)
+- [Sebastian Lague](https://www.youtube.com/user/Cercopithecan)
+- [Jason Weimann](https://www.youtube.com/channel/UCX_b3NNQN5bzExm-22-NVVg)
+- [Code Monkey](https://www.youtube.com/channel/UCFK6NCbuCIVzA6Yj1G_ZqCg)
+- [Blackthornprod](https://www.youtube.com/channel/UC9Z1XWw1kmnvOOFsj6Bzy2g)
